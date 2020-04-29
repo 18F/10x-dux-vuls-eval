@@ -11,7 +11,7 @@ locals {
 }
 
 module "target_asg" {
-  source = "git::https://github.com/cloudposse/terraform-aws-ec2-autoscale-group.git?ref=tags/0.4.0"
+  source = "./modules/asg"
 
   namespace = var.namespace
   stage     = var.stage
