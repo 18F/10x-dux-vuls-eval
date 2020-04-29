@@ -66,6 +66,34 @@ module "test_asg" {
   tags                                   = var.tags
 }
 
+module "report_server_asg" {
+  source = "./modules/asg"
+
+  namespace = var.namespace
+  stage     = var.stage
+  name      = "${var.name}-report-server"
+
+  image_id           = data.aws_ami.default.id
+  instance_type      = var.instance_type
+  key_name           = module.ssh_key_pair.key_name
+  security_group_ids = [aws_security_group.default.id]
+  subnet_ids = [
+    data.aws_subnet.az1.id,
+    data.aws_subnet.az2.id,
+    data.aws_subnet.az3.id
+  ]
+  health_check_type                      = var.health_check_type
+  min_size                               = var.min_size
+  max_size                               = var.max_size
+  wait_for_capacity_timeout              = var.wait_for_capacity_timeout
+  associate_public_ip_address            = var.associate_public_ip_address
+  user_data_base64                       = "${base64encode(local.userdata)}"
+  autoscaling_policies_enabled           = var.autoscaling_policies_enabled
+  cpu_utilization_high_threshold_percent = var.cpu_utilization_high_threshold_percent
+  cpu_utilization_low_threshold_percent  = var.cpu_utilization_low_threshold_percent
+  tags                                   = var.tags
+}
+
 module "ssh_key_pair" {
   source                = "git::https://github.com/cloudposse/terraform-aws-key-pair.git?ref=tags/0.9.0"
   namespace             = var.namespace
