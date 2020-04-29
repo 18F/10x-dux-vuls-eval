@@ -25,6 +25,24 @@ data "aws_ami" "default" {
   most_recent = true
 }
 
+data "aws_instances" "bastion" {
+  instance_state_names = ["running"]
+  
+  filter {
+    name = "tag:Name"
+    values = ["${var.namespace}-${var.stage}-${var.name}-bastion"]
+  }
+}
+
+data "aws_instances" "test" {
+  instance_state_names = ["running"]
+
+  filter {
+    name = "tag:Name"
+    values = ["${var.namespace}-${var.stage}-${var.name}-test"]
+  }
+}
+
 data "http" "caller_identity_ip" {
   url = var.ip_lookup_source
 }

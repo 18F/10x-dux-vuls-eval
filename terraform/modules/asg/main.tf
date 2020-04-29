@@ -5,11 +5,11 @@ module "asg" {
   stage     = var.stage
   name      = var.name
 
-  image_id      = var.image_id
-  instance_type = var.instance_type
-  key_name = var.key_name
-  security_group_ids = var.security_group_ids
-  subnet_ids = var.subnet_ids
+  image_id                               = var.image_id
+  instance_type                          = var.instance_type
+  key_name                               = var.key_name
+  security_group_ids                     = var.security_group_ids
+  subnet_ids                             = var.subnet_ids
   health_check_type                      = var.health_check_type
   min_size                               = var.min_size
   max_size                               = var.max_size

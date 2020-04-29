@@ -22,12 +22,28 @@ output "security_group_id" {
   value = aws_security_group.default.id
 }
 
-output "target_asg_id" {
-  value = module.target_asg.autoscaling_group_id
+output "bastion_asg_id" {
+  value = module.bastion_asg.autoscaling_group_id
 }
 
-output "target_asg_desired_capacity" {
-  value = module.target_asg.autoscaling_group_desired_capacity
+output "bastion_asg_desired_capacity" {
+  value = module.bastion_asg.autoscaling_group_desired_capacity
+}
+
+output "bastion_asg_instance_public_ips" {
+    value = flatten(data.aws_instances.bastion.*.public_ips)
+}
+
+output "test_asg_id" {
+  value = module.test_asg.autoscaling_group_id
+}
+
+output "test_asg_desired_capacity" {
+  value = module.test_asg.autoscaling_group_desired_capacity
+}
+
+output "test_asg_instance_private_ips" {
+    value = flatten(data.aws_instances.test.*.private_ips)
 }
 
 output "current_ingress_ip" {

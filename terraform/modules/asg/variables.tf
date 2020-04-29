@@ -14,11 +14,11 @@ variable "instance_type" {}
 variable "user_data_base64" {}
 
 variable "security_group_ids" {
-    type = list
+  type = list
 }
 
 variable "subnet_ids" {
-    type = list
+  type = list
 }
 
 variable "image_id" {}
