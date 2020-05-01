@@ -1,5 +1,5 @@
 locals {
-  userdata = <<-USERDATA
+  base_userdata = <<-USERDATA
     #!/bin/bash
     cat <<"__EOF__" > /home/ec2-user/.ssh/config
     Host *
@@ -8,6 +8,9 @@ locals {
     chmod 600 /home/ec2-user/.ssh/config
     chown ec2-user:ec2-user /home/ec2-user/.ssh/config
   USERDATA
+  bastion_userdata = local.base_userdata
+  report_server_userdata = local.base_userdata
+  test_userdata = local.base_userdata
 }
 
 module "bastion_asg" {
@@ -31,7 +34,7 @@ module "bastion_asg" {
   max_size                               = var.max_size
   wait_for_capacity_timeout              = var.wait_for_capacity_timeout
   associate_public_ip_address            = var.associate_public_ip_address
-  user_data_base64                       = "${base64encode(local.userdata)}"
+  user_data_base64                       = "${base64encode(local.bastion_userdata)}"
   autoscaling_policies_enabled           = var.autoscaling_policies_enabled
   cpu_utilization_high_threshold_percent = var.cpu_utilization_high_threshold_percent
   cpu_utilization_low_threshold_percent  = var.cpu_utilization_low_threshold_percent
@@ -59,7 +62,7 @@ module "test_asg" {
   max_size                               = var.max_size
   wait_for_capacity_timeout              = var.wait_for_capacity_timeout
   associate_public_ip_address            = var.associate_public_ip_address
-  user_data_base64                       = "${base64encode(local.userdata)}"
+  user_data_base64                       = "${base64encode(local.test_userdata)}"
   autoscaling_policies_enabled           = var.autoscaling_policies_enabled
   cpu_utilization_high_threshold_percent = var.cpu_utilization_high_threshold_percent
   cpu_utilization_low_threshold_percent  = var.cpu_utilization_low_threshold_percent
@@ -87,7 +90,7 @@ module "report_server_asg" {
   max_size                               = var.max_size
   wait_for_capacity_timeout              = var.wait_for_capacity_timeout
   associate_public_ip_address            = var.associate_public_ip_address
-  user_data_base64                       = "${base64encode(local.userdata)}"
+  user_data_base64                       = "${base64encode(local.report_server_userdata)}"
   autoscaling_policies_enabled           = var.autoscaling_policies_enabled
   cpu_utilization_high_threshold_percent = var.cpu_utilization_high_threshold_percent
   cpu_utilization_low_threshold_percent  = var.cpu_utilization_low_threshold_percent
