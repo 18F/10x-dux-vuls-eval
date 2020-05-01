@@ -30,20 +30,12 @@ output "bastion_asg_desired_capacity" {
   value = module.bastion_asg.autoscaling_group_desired_capacity
 }
 
-output "bastion_asg_instance_public_ips" {
-    value = flatten(data.aws_instances.bastion.*.public_ips)
-}
-
 output "report_server_asg_id" {
   value = module.report_server_asg.autoscaling_group_id
 }
 
 output "report_server_asg_desired_capacity" {
   value = module.report_server_asg.autoscaling_group_desired_capacity
-}
-
-output "report_server_asg_instance_private_ips" {
-    value = flatten(data.aws_instances.report_server.*.private_ips)
 }
 
 output "test_asg_id" {
