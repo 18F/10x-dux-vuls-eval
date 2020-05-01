@@ -7,16 +7,27 @@ locals {
     __EOF__
     chmod 600 /home/ec2-user/.ssh/config
     chown ec2-user:ec2-user /home/ec2-user/.ssh/config
+    yum install -y git tmux vim
+    yum update -y
   USERDATA
-  bastion_userdata = <<-USERDATA
+  bastion_userdata = local.base_userdata
+  report_server_userdata = local.base_userdata
+  test_userdata = <<-USERDATA
     ${local.base_userdata}
+    yum install -y git golang
     su - ec2-user <<"__EOF__"
-    sudo yum update -y
-    sudo yum install -y git tmux vim
+    export GOPATH=$HOME
+    echo "GOPATH is $GOPATH ..."
+    rm -rf $GOPATH/{bin,pkg,src}
+    mkdir -p $GOPATH/src/github.com/future-architect
+    pushd $GOPATH/src/github.com/future-architect
+    git clone https://github.com/future-architect/vuls.git
+    pushd vuls
+    make install
+    popd
+    popd
     __EOF__
   USERDATA
-  report_server_userdata = local.base_userdata
-  test_userdata = local.base_userdata
 }
 
 module "bastion_asg" {
