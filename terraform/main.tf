@@ -8,7 +8,13 @@ locals {
     chmod 600 /home/ec2-user/.ssh/config
     chown ec2-user:ec2-user /home/ec2-user/.ssh/config
   USERDATA
-  bastion_userdata = local.base_userdata
+  bastion_userdata = <<-USERDATA
+    ${local.base_userdata}
+    su - ec2-user <<"__EOF__"
+    sudo yum update -y
+    sudo yum install -y git tmux vim
+    __EOF__
+  USERDATA
   report_server_userdata = local.base_userdata
   test_userdata = local.base_userdata
 }
