@@ -46,10 +46,6 @@ output "test_asg_desired_capacity" {
   value = module.test_asg.autoscaling_group_desired_capacity
 }
 
-output "test_asg_instance_private_ips" {
-    value = flatten(data.aws_instances.test.*.private_ips)
-}
-
 output "current_ingress_ip" {
   value = "${chomp(data.http.caller_identity_ip.body)}/32"
 }
