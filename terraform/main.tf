@@ -17,12 +17,10 @@ locals {
     systemctl start docker
     systemctl enable docker
     gpasswd -a ec2-user docker
-    su - ec2-user <<"__EOF__"
     git clone https://github.com/vulsio/vulsctl
     pushd vulsctl
     bash -x ./update-all.sh
     popd
-    __EOF__
   USERDATA
   test_userdata = <<-USERDATA
     ${local.base_userdata}
