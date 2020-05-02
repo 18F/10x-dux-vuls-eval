@@ -15,7 +15,7 @@ module "asg" {
   max_size                               = var.max_size
   wait_for_capacity_timeout              = var.wait_for_capacity_timeout
   associate_public_ip_address            = var.associate_public_ip_address
-  user_data_base64                       = "${base64encode(var.user_data_base64)}"
+  user_data_base64                       = var.user_data_base64
   autoscaling_policies_enabled           = var.autoscaling_policies_enabled
   cpu_utilization_high_threshold_percent = var.cpu_utilization_high_threshold_percent
   cpu_utilization_low_threshold_percent  = var.cpu_utilization_low_threshold_percent
