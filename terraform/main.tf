@@ -11,7 +11,19 @@ locals {
     yum update -y
   USERDATA
   bastion_userdata = local.base_userdata
-  report_server_userdata = local.base_userdata
+  report_server_userdata = <<-USERDATA
+    ${local.base_userdata}
+    yum install -y git docker
+    systemctl start docker
+    systemctl enable docker
+    gpasswd -a ec2-user docker
+    su - ec2-user <<"__EOF__"
+    git clone https://github.com/vulsio/vulsctl
+    pushd vulsctl
+    bash -x ./update-all.sh
+    popd
+    __EOF__
+  USERDATA
   test_userdata = <<-USERDATA
     ${local.base_userdata}
     yum install -y git golang
@@ -38,7 +50,7 @@ module "bastion_asg" {
   name      = "${var.name}-bastion"
 
   image_id           = data.aws_ami.default.id
-  instance_type      = var.instance_type
+  instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
@@ -66,7 +78,7 @@ module "test_asg" {
   name      = "${var.name}-test"
 
   image_id           = data.aws_ami.default.id
-  instance_type      = var.instance_type
+  instance_type      = var.medium_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
@@ -94,7 +106,7 @@ module "report_server_asg" {
   name      = "${var.name}-report-server"
 
   image_id           = data.aws_ami.default.id
-  instance_type      = var.instance_type
+  instance_type      = var.large_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [

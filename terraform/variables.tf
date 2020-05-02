@@ -16,7 +16,11 @@ variable "stage" {}
 
 variable "name" {}
 
-variable "instance_type" {}
+variable "small_instance_type" {}
+
+variable "medium_instance_type" {}
+
+variable "large_instance_type" {}
 
 variable "health_check_type" {}
 
