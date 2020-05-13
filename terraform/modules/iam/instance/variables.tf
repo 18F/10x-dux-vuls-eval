@@ -32,8 +32,8 @@ variable "assume_role_policy" {
 
 variable "policy" {
   description = "The EC2 instance profile policy itself"
-  type       = string
-  default    = <<-EOF
+  type        = string
+  default     = <<-EOF
     {
         "Version": "2012-10-17",
         "Statement": [
