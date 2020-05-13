@@ -10,6 +10,7 @@ module "asg" {
   key_name                               = var.key_name
   security_group_ids                     = var.security_group_ids
   subnet_ids                             = var.subnet_ids
+  iam_instance_profile_name              = var.iam_instance_profile_name
   health_check_type                      = var.health_check_type
   min_size                               = var.min_size
   max_size                               = var.max_size
