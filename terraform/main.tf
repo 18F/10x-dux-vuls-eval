@@ -1,5 +1,6 @@
 locals {
-  base_userdata = <<-USERDATA
+  bucket                 = "${var.namespace}-${var.stage}-${var.name}-results"
+  base_userdata          = <<-USERDATA
     #!/bin/bash
     cat <<"__EOF__" > /home/ec2-user/.ssh/config
     Host *
@@ -10,7 +11,7 @@ locals {
     yum install -y git tmux vim
     yum update -y
   USERDATA
-  bastion_userdata = local.base_userdata
+  bastion_userdata       = local.base_userdata
   report_server_userdata = <<-USERDATA
     ${local.base_userdata}
     yum install -y git docker
@@ -22,7 +23,7 @@ locals {
     bash -x ./update-all.sh
     popd
   USERDATA
-  test_userdata = <<-USERDATA
+  test_userdata          = <<-USERDATA
     ${local.base_userdata}
     yum install -y git golang
     su - ec2-user <<"__EOF__"
@@ -38,6 +39,36 @@ locals {
     popd
     __EOF__
   USERDATA
+}
+
+module "iam_instance_profile" {
+  source = "./modules/iam/instance"
+
+  namespace = var.namespace
+  stage     = var.stage
+  name      = var.name
+  policy    = <<-EOF
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "s3:ListAllMyBuckets"
+              ],
+              "Resource": "arn:aws:s3:::*"
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "s3:GetObject",
+                  "s3:PutObject"
+              ],
+              "Resource": "arn:aws:s3:::${local.bucket}/*"
+          }
+      ]
+  }
+  EOF
 }
 
 module "bastion_asg" {
@@ -56,6 +87,7 @@ module "bastion_asg" {
     data.aws_subnet.az2.id,
     data.aws_subnet.az3.id
   ]
+  iam_instance_profile_name              = module.iam_instance_profile.name
   health_check_type                      = var.health_check_type
   min_size                               = var.min_size
   max_size                               = var.max_size
@@ -84,6 +116,7 @@ module "test_asg" {
     data.aws_subnet.az2.id,
     data.aws_subnet.az3.id
   ]
+  iam_instance_profile_name              = module.iam_instance_profile.name
   health_check_type                      = var.health_check_type
   min_size                               = var.min_size
   max_size                               = var.max_size
@@ -112,6 +145,7 @@ module "report_server_asg" {
     data.aws_subnet.az2.id,
     data.aws_subnet.az3.id
   ]
+  iam_instance_profile_name              = module.iam_instance_profile.name
   health_check_type                      = var.health_check_type
   min_size                               = var.min_size
   max_size                               = var.max_size

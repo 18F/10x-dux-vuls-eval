@@ -21,6 +21,8 @@ variable "subnet_ids" {
   type = list
 }
 
+variable "iam_instance_profile_name" {}
+
 variable "image_id" {}
 
 variable "key_name" {}
