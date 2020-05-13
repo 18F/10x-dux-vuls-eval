@@ -61,6 +61,7 @@ module "iam_instance_profile" {
           {
               "Effect": "Allow",
               "Action": [
+                  "s3:ListObjects",
                   "s3:GetObject",
                   "s3:PutObject"
               ],
