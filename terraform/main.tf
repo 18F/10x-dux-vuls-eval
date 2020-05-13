@@ -54,10 +54,10 @@ module "iam_instance_profile" {
           {
               "Effect": "Allow",
               "Action": [
-                  "s3:ListAllMyBuckets"
+                  "s3:ListBucket",
               ],
-              "Resource": "arn:aws:s3:::*"
-          },
+              "Resource": "arn:aws:s3:::${local.bucket}"
+          }
           {
               "Effect": "Allow",
               "Action": [
