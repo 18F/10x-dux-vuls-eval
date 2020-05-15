@@ -1,0 +1,62 @@
+version: '3'
+services:
+  vuls:
+    image: vuls/vuls
+    command: > 
+      server -debug -debug-sql \
+      -listen=0.0.0.0:5515 \
+      -log-dir=/var/log \
+      -cvedb-type=http \
+      -cvedb-url=http://cvedb:1323 \
+      -ovaldb-type=http \
+      -ovaldb-url=http://ovaldb:1324 \
+      -gostdb-type=http \
+      -gostdb-url=http://gostdb:1325 \
+      -exploitdb-type=http \
+      -exploitdb-url=http://exploitdb:1326
+    volumes:
+      - ./vuls:/vuls
+      - ./log:/var/log
+    ports:
+      - "5515:5515"
+    links:
+      - "cve:cvedb"
+      - "oval:ovaldb"
+      - "gost:gostdb"
+      - "exploitdb"
+
+  cve:
+    image: vuls/go-cve-dictionary
+    command: server --bind=0.0.0.0 --port=1323
+    volumes:
+      - ./vuls:/vuls
+      - ./log:/var/log
+    ports:
+      - "1323:1323"
+
+  oval:
+    image: vuls/goval-dictionary
+    command: server --bind=0.0.0.0 --port=1324
+    volumes:
+      - ./vuls:/vuls
+      - ./log:/var/log
+    ports:
+      - "1324:1324"
+
+  gost:
+    image: vuls/gost
+    command: server --bind=0.0.0.0 --port=1325
+    volumes:
+      - ./vuls:/vuls
+      - ./log:/var/log
+    ports:
+      - "1325:1325"
+
+  exploitdb:
+    image: vuls/go-exploitdb
+    command: server --bind=0.0.0.0 --port=1326
+    volumes:
+      - ./vuls:/vuls
+      - ./log:/var/log
+    ports:
+      - "1326:1326"
