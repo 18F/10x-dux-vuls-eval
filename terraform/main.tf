@@ -21,9 +21,9 @@ locals {
     https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)
     sudo chmod +x /usr/local/bin/docker-compose
     gpasswd -a ec2-user docker
+    pushd /home/ec2-user/
     git clone https://github.com/flexion/10x-dux-vuls-eval.git
-    pushd vulsctl
-    bash -x ./update-all.sh
+    chown -R ec2-user:ec2-user 10x-dux-vuls-eval
     popd
   USERDATA
   test_userdata          = <<-USERDATA
