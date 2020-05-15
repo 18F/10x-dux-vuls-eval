@@ -17,8 +17,11 @@ locals {
     yum install -y git docker
     systemctl start docker
     systemctl enable docker
+    sudo curl -L  -o /usr/local/bin/docker-compose \
+    https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)
+    sudo chmod +x /usr/local/bin/docker-compose
     gpasswd -a ec2-user docker
-    git clone https://github.com/vulsio/vulsctl
+    git clone https://github.com/flexion/10x-dux-vuls-eval.git
     pushd vulsctl
     bash -x ./update-all.sh
     popd
