@@ -187,6 +187,46 @@ resource "aws_security_group" "default" {
     cidr_blocks = ["${chomp(data.http.caller_identity_ip.body)}/32"]
   }
 
+  ingress {
+    description = "internal-go-cve-dictionary"
+    from_port   = 1323
+    to_port     = 1323
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-goval-dictionary"
+    from_port   = 1324
+    to_port     = 1324
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-gost"
+    from_port   = 1325
+    to_port     = 1325
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-go-exploitdb"
+    from_port   = 1326
+    to_port     = 1326
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-vuls"
+    from_port   = 5515
+    to_port     = 5515
+    protocol    = "tcp"
+    self        = true
+  }
+
   egress {
     description = "egress-all"
     from_port   = 0
