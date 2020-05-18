@@ -24,6 +24,8 @@ locals {
     pushd /home/ec2-user/
     git clone https://github.com/flexion/10x-dux-vuls-eval.git
     chown -R ec2-user:ec2-user 10x-dux-vuls-eval
+    for db in cve go-exploitdb gost oval; do aws s3 cp s3://10x-dux-dev-vuls-results/${db}.sqlite3 .; done; 
+    done
     popd
   USERDATA
   test_userdata          = <<-USERDATA
