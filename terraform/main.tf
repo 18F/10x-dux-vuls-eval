@@ -115,7 +115,7 @@ module "test_asg" {
   name      = "${var.name}-test"
 
   image_id           = data.aws_ami.default.id
-  instance_type      = var.medium_instance_type
+  instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
@@ -144,7 +144,7 @@ module "report_server_asg" {
   name      = "${var.name}-report-server"
 
   image_id           = data.aws_ami.default.id
-  instance_type      = var.large_instance_type
+  instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
