@@ -1,7 +1,7 @@
 version: '3'
 services:
   vuls:
-    image: vuls/vuls
+    image: ohsh6o/vuls:0.9.5-hf1
     command: > 
       server -debug -debug-sql \
       -listen=0.0.0.0:5515 \
