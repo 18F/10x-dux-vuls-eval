@@ -33,6 +33,8 @@ locals {
     ${local.base_userdata}
     yum install -y git golang
     su - ec2-user <<"__EOF__"
+    git clone https://github.com/flexion/10x-dux-app
+    chown -R ec2-user:ec2-user 10x-dux-app
     export GOPATH=$HOME
     echo "GOPATH is $GOPATH ..."
     rm -rf $GOPATH/{bin,pkg,src}
