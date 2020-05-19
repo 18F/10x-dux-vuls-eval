@@ -85,6 +85,7 @@ module "bastion_asg" {
   stage     = var.stage
   name      = "${var.name}-bastion"
 
+  block_device_mappings = []
   image_id           = data.aws_ami.default.id
   instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
@@ -114,6 +115,7 @@ module "test_asg" {
   stage     = var.stage
   name      = "${var.name}-test"
 
+  block_device_mappings = []
   image_id           = data.aws_ami.default.id
   instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
@@ -143,6 +145,7 @@ module "report_server_asg" {
   stage     = var.stage
   name      = "${var.name}-report-server"
 
+  block_device_mappings = var.block_device_mappings
   image_id           = data.aws_ami.default.id
   instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name

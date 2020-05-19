@@ -1,6 +1,22 @@
 region                                 = "us-east-1"
 ami_owner                              = "amazon"
 ami_name_regex                         = "amzn2-ami-hvm-2.0.*"
+block_device_mappings = [
+  {
+    "device_name" : "/dev/xvda",
+    "no_device" : null,
+    "virtual_name" : null,
+    "ebs" : {
+      "delete_on_termination" : null,
+      "encrypted" : false,
+      "iops" : null,
+      "kms_key_id" : null,
+      "snapshot_id" : null,
+      "volume_size" : 64,
+      "volume_type" : "gp2"
+    }
+  }
+]
 namespace                              = "10x-dux"
 stage                                  = "dev"
 name                                   = "vuls"

@@ -10,6 +10,8 @@ variable "ami_name_regex" {
   description = "Regex string pattern to filter list of AMIs and return their ID"
 }
 
+variable "block_device_mappings" {}
+
 variable "namespace" {}
 
 variable "stage" {}

@@ -7,6 +7,7 @@ module "asg" {
 
   image_id                               = var.image_id
   instance_type                          = var.instance_type
+  block_device_mappings                  = var.block_device_mappings
   key_name                               = var.key_name
   security_group_ids                     = var.security_group_ids
   subnet_ids                             = var.subnet_ids
