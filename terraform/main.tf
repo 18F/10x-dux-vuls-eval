@@ -36,9 +36,9 @@ locals {
     export GOPATH=$HOME
     echo "GOPATH is $GOPATH ..."
     rm -rf $GOPATH/{bin,pkg,src}
-    mkdir -p $GOPATH/src/github.com/future-architect
-    pushd $GOPATH/src/github.com/future-architect
-    git clone https://github.com/future-architect/vuls.git
+    mkdir -p $GOPATH/src/github.com/ohsh6o
+    pushd $GOPATH/src/github.com/ohsh6o
+    git clone https://github.com/ohsh6o/vuls.git
     pushd vuls
     make install
     popd
