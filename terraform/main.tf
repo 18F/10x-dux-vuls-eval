@@ -17,22 +17,36 @@ locals {
     yum install -y git docker
     systemctl start docker
     systemctl enable docker
+    sudo curl -L  -o /usr/local/bin/docker-compose \
+    https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)
+    sudo chmod +x /usr/local/bin/docker-compose
     gpasswd -a ec2-user docker
-    git clone https://github.com/vulsio/vulsctl
-    pushd vulsctl
-    bash -x ./update-all.sh
+    pushd /home/ec2-user/
+    git clone https://github.com/flexion/10x-dux-vuls-eval.git
+    chown -R ec2-user:ec2-user 10x-dux-vuls-eval
+    pushd 10x-dux-vuls-eval/docker/
+    pushd vuls/
+    for db in cve go-exploitdb gost oval;
+    do aws s3 cp s3://10x-dux-dev-vuls-results/$db.sqlite3 .;
+    done;
+    popd
+    aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
+    popd
     popd
   USERDATA
   test_userdata          = <<-USERDATA
     ${local.base_userdata}
     yum install -y git golang
     su - ec2-user <<"__EOF__"
+    aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
+    git clone https://github.com/flexion/10x-dux-app
+    chown -R ec2-user:ec2-user 10x-dux-app
     export GOPATH=$HOME
     echo "GOPATH is $GOPATH ..."
     rm -rf $GOPATH/{bin,pkg,src}
-    mkdir -p $GOPATH/src/github.com/future-architect
-    pushd $GOPATH/src/github.com/future-architect
-    git clone https://github.com/future-architect/vuls.git
+    mkdir -p $GOPATH/src/github.com/ohsh6o
+    pushd $GOPATH/src/github.com/ohsh6o
+    git clone https://github.com/ohsh6o/vuls.git
     pushd vuls
     make install
     popd
@@ -79,6 +93,7 @@ module "bastion_asg" {
   stage     = var.stage
   name      = "${var.name}-bastion"
 
+  block_device_mappings = []
   image_id           = data.aws_ami.default.id
   instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
@@ -108,8 +123,9 @@ module "test_asg" {
   stage     = var.stage
   name      = "${var.name}-test"
 
+  block_device_mappings = []
   image_id           = data.aws_ami.default.id
-  instance_type      = var.medium_instance_type
+  instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
@@ -137,8 +153,9 @@ module "report_server_asg" {
   stage     = var.stage
   name      = "${var.name}-report-server"
 
+  block_device_mappings = var.block_device_mappings
   image_id           = data.aws_ami.default.id
-  instance_type      = var.large_instance_type
+  instance_type      = var.small_instance_type
   key_name           = module.ssh_key_pair.key_name
   security_group_ids = [aws_security_group.default.id]
   subnet_ids = [
@@ -182,6 +199,46 @@ resource "aws_security_group" "default" {
     protocol    = "tcp"
     self        = true
     cidr_blocks = ["${chomp(data.http.caller_identity_ip.body)}/32"]
+  }
+
+  ingress {
+    description = "internal-go-cve-dictionary"
+    from_port   = 1323
+    to_port     = 1323
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-goval-dictionary"
+    from_port   = 1324
+    to_port     = 1324
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-gost"
+    from_port   = 1325
+    to_port     = 1325
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-go-exploitdb"
+    from_port   = 1326
+    to_port     = 1326
+    protocol    = "tcp"
+    self        = true
+  }
+
+  ingress {
+    description = "internal-vuls"
+    from_port   = 5515
+    to_port     = 5515
+    protocol    = "tcp"
+    self        = true
   }
 
   egress {

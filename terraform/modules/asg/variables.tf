@@ -25,6 +25,8 @@ variable "iam_instance_profile_name" {}
 
 variable "image_id" {}
 
+variable "block_device_mappings" {}
+
 variable "key_name" {}
 
 variable "health_check_type" {}
