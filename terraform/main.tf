@@ -72,7 +72,7 @@ module "iam_instance_profile" {
                   "s3:ListBucket",
               ],
               "Resource": "arn:aws:s3:::${local.bucket}"
-          }
+          },
           {
               "Effect": "Allow",
               "Action": [
