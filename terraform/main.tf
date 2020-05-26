@@ -25,13 +25,13 @@ locals {
     git clone https://github.com/flexion/10x-dux-vuls-eval.git
     chown -R ec2-user:ec2-user 10x-dux-vuls-eval
     pushd 10x-dux-vuls-eval/docker/
-    git checkout tasks/initialize-containers-at-start-with-cloud-init
     pushd vuls/
     for db in cve go-exploitdb gost oval;
     do aws s3 cp s3://10x-dux-dev-vuls-results/$db.sqlite3 .;
     done;
     popd
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
+    docker-compose up -d
     popd
     popd
   USERDATA
@@ -69,7 +69,7 @@ module "iam_instance_profile" {
           {
               "Effect": "Allow",
               "Action": [
-                  "s3:ListBucket",
+                  "s3:ListBucket"
               ],
               "Resource": "arn:aws:s3:::${local.bucket}"
           },
