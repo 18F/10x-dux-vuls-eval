@@ -31,6 +31,7 @@ locals {
     done;
     popd
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
+    docker-compose up -d
     popd
     popd
   USERDATA
@@ -68,10 +69,10 @@ module "iam_instance_profile" {
           {
               "Effect": "Allow",
               "Action": [
-                  "s3:ListBucket",
+                  "s3:ListBucket"
               ],
               "Resource": "arn:aws:s3:::${local.bucket}"
-          }
+          },
           {
               "Effect": "Allow",
               "Action": [

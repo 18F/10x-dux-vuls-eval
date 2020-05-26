@@ -1,9 +1,24 @@
 version: '3'
 services:
   vuls:
-    image: ohsh6o/vuls:0.9.5-hf1
-    command: > 
-      server -debug -debug-sql -to-localfile -format-json -log-dir=/var/log -results-dir=/vuls/results -listen=0.0.0.0:5515 -cvedb-type=http -cvedb-url=http://cvedb:1323 -ovaldb-type=http -ovaldb-url=http://ovaldb:1324 -gostdb-type=http -gostdb-url=http://gostdb:1325 -explotdb-type=http -exploitdb-url=http://exploitdb:1326
+    image: vuls/vuls
+    command:
+      - server
+      - -debug
+      - -debug-sql
+      - -to-localfile
+      - -format-json
+      - -log-dir=/var/log
+      - -results-dir=/vuls/results
+      - -listen=0.0.0.0:5515
+      - -cvedb-type=http
+      - -cvedb-url=http://cvedb:1323
+      - -ovaldb-type=http
+      - -ovaldb-url=http://ovaldb:1324
+      - -gostdb-type=http
+      - -gostdb-url=http://gostdb:1325
+      - -exploitdb-type=http
+      - -exploitdb-url=http://exploitdb:1326
     volumes:
       - ./vuls:/vuls
       - ./log:/var/log
