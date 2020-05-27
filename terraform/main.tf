@@ -15,7 +15,7 @@ locals {
   bastion_userdata       = local.base_userdata
   report_server_userdata = <<-USERDATA
     ${local.base_userdata}
-    yum install -y git docker
+    yum install -y docker
     systemctl start docker
     systemctl enable docker
     sudo curl -L  -o /usr/local/bin/docker-compose \
@@ -38,7 +38,7 @@ locals {
   USERDATA
   test_userdata          = <<-USERDATA
     ${local.base_userdata}
-    yum install -y git golang
+    yum install -y golang
     su - ec2-user <<"__EOF__"
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
     git clone https://github.com/flexion/10x-dux-app
