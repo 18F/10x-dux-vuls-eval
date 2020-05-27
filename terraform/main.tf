@@ -1,5 +1,6 @@
 locals {
   bucket                 = "${var.namespace}-${var.stage}-${var.name}-results"
+  vuls_release           = "0.9.6"
   base_userdata          = <<-USERDATA
     #!/bin/bash
     cat <<"__EOF__" > /home/ec2-user/.ssh/config
@@ -14,7 +15,7 @@ locals {
   bastion_userdata       = local.base_userdata
   report_server_userdata = <<-USERDATA
     ${local.base_userdata}
-    yum install -y git docker
+    yum install -y docker
     systemctl start docker
     systemctl enable docker
     sudo curl -L  -o /usr/local/bin/docker-compose \
@@ -37,21 +38,10 @@ locals {
   USERDATA
   test_userdata          = <<-USERDATA
     ${local.base_userdata}
-    yum install -y git golang
     su - ec2-user <<"__EOF__"
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
     git clone https://github.com/flexion/10x-dux-app
     chown -R ec2-user:ec2-user 10x-dux-app
-    export GOPATH=$HOME
-    echo "GOPATH is $GOPATH ..."
-    rm -rf $GOPATH/{bin,pkg,src}
-    mkdir -p $GOPATH/src/github.com/ohsh6o
-    pushd $GOPATH/src/github.com/ohsh6o
-    git clone https://github.com/ohsh6o/vuls.git
-    pushd vuls
-    make install
-    popd
-    popd
     __EOF__
   USERDATA
 }

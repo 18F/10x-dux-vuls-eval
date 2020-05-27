@@ -1,7 +1,7 @@
 version: '3'
 services:
   vuls:
-    image: vuls/vuls
+    image: vuls/vuls:0.9.6
     command:
       - server
       - -debug
