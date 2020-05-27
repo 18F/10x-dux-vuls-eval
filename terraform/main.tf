@@ -38,21 +38,10 @@ locals {
   USERDATA
   test_userdata          = <<-USERDATA
     ${local.base_userdata}
-    yum install -y golang
     su - ec2-user <<"__EOF__"
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
     git clone https://github.com/flexion/10x-dux-app
     chown -R ec2-user:ec2-user 10x-dux-app
-    export GOPATH=$HOME
-    echo "GOPATH is $GOPATH ..."
-    rm -rf $GOPATH/{bin,pkg,src}
-    mkdir -p $GOPATH/src/github.com/ohsh6o
-    pushd $GOPATH/src/github.com/ohsh6o
-    git clone https://github.com/ohsh6o/vuls.git
-    pushd vuls
-    make install
-    popd
-    popd
     __EOF__
   USERDATA
 }
