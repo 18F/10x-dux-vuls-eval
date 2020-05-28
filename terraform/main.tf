@@ -232,6 +232,17 @@ resource "aws_security_group" "default" {
     self        = true
   }
 
+  ingress {
+    description = "external-vuls"
+    from_port   = 5515
+    to_port     = 5515
+    protocol    = "tcp"
+    cidr_blocks = concat(
+      ["${chomp(data.http.caller_identity_ip.body)}/32"],
+      var.cloudgov_cidrs
+      )
+  }
+
   egress {
     description = "egress-all"
     from_port   = 0
