@@ -51,3 +51,8 @@ variable "private_key_extension" {}
 variable "public_key_extension" {}
 
 variable "ip_lookup_source" {}
+
+variable "cloudgov_cidrs" {
+  type = list
+  default = []
+}
