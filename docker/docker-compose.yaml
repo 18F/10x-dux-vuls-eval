@@ -65,3 +65,16 @@ services:
       - ./log:/var/log
     ports:
       - "1326:1326"
+  vulsrepo:
+      image: vuls/vulsrepo:latest
+      command:
+        - vulsrepo
+#       - -debug
+        - -rootPath=/home/vuls-user/vulsrepo
+        - -resultsPath=/opt/vuls/results
+        - -serverPort=5111
+      volumes:
+        - ./vuls:/vuls
+        - ./log:/var/log
+      ports:
+        - "5111:5111"
