@@ -68,7 +68,7 @@ services:
   vulsrepo:
       image: vuls/vulsrepo:latest
       command:
-        - vulsrepo
+        - vulsrepo-server
 #       - -debug
         - -rootPath=/home/vuls-user/vulsrepo
         - -resultsPath=/opt/vuls/results
