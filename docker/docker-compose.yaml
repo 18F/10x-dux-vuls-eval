@@ -70,8 +70,9 @@ services:
       command:
         - vulsrepo-server
       volumes:
-        - ./vuls:/vuls
         - ./log:/var/log
         - ./vulsresults:/vuls/results
       ports:
         - "5111:5111"
+volumes: 
+  vuls:
