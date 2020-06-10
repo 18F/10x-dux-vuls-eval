@@ -65,6 +65,7 @@ services:
       - ./log:/var/log
     ports:
       - "1326:1326"
+
   vulsrepo:
       image: vuls/vulsrepo:latest
       command:
