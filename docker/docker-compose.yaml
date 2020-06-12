@@ -1,7 +1,7 @@
 version: '3'
 services:
   vuls:
-    image: vuls/vuls:0.9.6
+    image: vuls/vuls:0.9.7
     command:
       - server
       - -debug
@@ -67,7 +67,7 @@ services:
       - "1326:1326"
 
   vulsrepo:
-      image: vuls/vulsrepo:latest
+      image: ishidaco/vulsrepo:latest
       command:
         - vulsrepo-server
       volumes:
