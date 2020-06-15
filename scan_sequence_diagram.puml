@@ -1,0 +1,18 @@
+@startuml
+actor Developer as dev
+actor "Security Official" as so
+actor "Portfolio Owner" as po
+participant Cloud.gov as cg
+participant Github as gh
+participant "Vuls API Server" as vs
+
+dev->cg: Deploy app with manifest.yml
+cg->gh: Pull buildpack contents from Github
+gh->cg: Buildpack configuration and executables staged in app
+cg->vs: Scan app instance and POST to vuls server with HTTP API
+vs->cg: Response sent to scan data, annotated with analysis
+cg->dev: Show deployment with vuls buildpack
+dev->vs: Read app instance status from report server UI
+so->vs: Read app instance status from report server UI
+po->vs: Read app instance status from report server UI
+@enduml
