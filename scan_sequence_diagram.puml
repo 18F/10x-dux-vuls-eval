@@ -1,18 +1,25 @@
 @startuml
-actor Developer as dev
-actor "Security Official" as so
+actor "App Developer" as dev
+actor "Cloud.gov Engineer" as ceng
 actor "Portfolio Owner" as po
+actor "Security Official" as so
 participant Cloud.gov as cg
 participant Github as gh
-participant "Vuls API Server" as vs
+participant "Vuls Repo UI & API" as vso
+participant "Vuls Scan API Service" as vsa
+participant "Vuls Vulnerability DB" as vdb
+
 
 dev->cg: Deploy app with manifest.yml
 cg->gh: Pull buildpack contents from Github
 gh->cg: Buildpack configuration and executables staged in app
-cg->vs: Scan app instance and POST to vuls server with HTTP API
-vs->cg: Response sent to scan data, annotated with analysis
+cg->vsa: Scan app instance and POST to vuls server with HTTP API
+vsa->vdb: Analyze dependencies for vulnerabilities and save analysis to DB
+vdb->vsa: Enrich scan data with vuln annotations
+vsa->cg: Scan data sent in response, annotated with analysis
 cg->dev: Show deployment with vuls buildpack
-dev->vs: Read app instance status from report server UI
-so->vs: Read app instance status from report server UI
-po->vs: Read app instance status from report server UI
+dev->vso: Read app instance status from report server UI
+ce->vso: Read app instance status from report server UI
+so->vso: Read app instance status from report server UI
+po->vso: Read app instance status from report server UI
 @enduml
