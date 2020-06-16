@@ -10,14 +10,20 @@ Similar open source efforts, [vendor integrations](https://blog.aquasec.com/usin
 
 ## Architecture
 
+Below is the current system architecture.
+
+![Vuls Architecture Diagram](./architecture.svg)
+
+(NOTE: This architecture diagram is derived from [updating this PlantUML file](./architecture.puml).)
+
 ## Data Flow and Sequence Diagrams
 
 Below is a high-level overview of how scans examine vulnerabilities in an
 application's dependencies once deployed into test applications in the cloud.gov
 sandbox environment.
 
-![Vuls Scan Sequence Diagram](./docs/../scan_sequence_diagram.svg)
+![Vuls Scan Sequence Diagram](./scan_sequence_diagram.svg)
 
-(NOTE: This sequence diagram is derived from [updating this PlantUML file](./docs/../scan_sequence_diagram.puml).)
+(NOTE: This sequence diagram is derived from [updating this PlantUML file](./scan_sequence_diagram.puml).)
 
 ## Appendix
