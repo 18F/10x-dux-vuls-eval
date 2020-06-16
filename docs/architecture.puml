@@ -1,0 +1,53 @@
+@startuml "bigbankplc"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 200
+
+LAYOUT_TOP_DOWN
+LAYOUT_WITH_LEGEND()
+
+System_Boundary(c2, "AWS Account for Vuls") {
+
+    Container(vuls_repo, "Vuls Reporting UI", "Golang, Javascript, HTML", "An API serving report data and visualizing reporting info")
+
+    Container(vuls_api, "Vuls Scan API", "Golang", "The API server exposing health and scan upload endpoints")
+
+    Container(vuls_reports_dir, "Vuls file store for reports", "JSON", "A filesystem location to cache scan reports enhanced with vulnerability analysis")
+
+    Container(cve_db_api, "CVE DB API", "Golang", "Database to store 3rd party vulnerability data and subset of vulnerability analysis")
+
+    ContainerDb(cve_db, "CVE DB", "SQLite", "Stores a normalized version of all business data for ad hoc reporting purposes")
+
+    Container(exploit_db_api, "Exploit DB API", "Golang", "Exploit DB API")
+
+    ContainerDb(exploit_db, "Exploit DB", "SQLite", "DB with exploit-db.com data for Vuls to show PoC exploits")
+
+    Container(gost_db_api, "GOST DB API", "Golang", "Security Tracker DB API")
+
+    ContainerDb(gost_db, "GOST DB", "SQLite", "Security Tracker DB, to cross-ref CVEs and send notifications")
+
+    Container(oval_db_api, "OVAL DB API", "Golang", "OVAL DB API")
+
+    ContainerDb(oval_db, "OVAL DB", "SQLite", "DB for OVAL data for Alpine, Amazon, Debian, Oracle, RedHat, SUSE, and Ubuntu Linux")
+}
+
+Rel_R(vuls_api, vuls_reports_dir, "Cache analyzed scans to filesystem", "System FS calls")
+Rel_R(vuls_repo, vuls_reports_dir, "Serve static assets for frontend and report data via API", "Golang DB and FS libraries")
+
+Rel(cve_db_api, vuls_api, "Respond with CVE data for query", "HTTP")
+Rel(exploit_db_api, vuls_api, "Respond with Exploit DB data for query", "HTTP")
+Rel(gost_db_api, vuls_api, "Respond with Security Tracker DB data for query", "HTTP")
+Rel(oval_db_api, vuls_api, "Respond with OVAL DB data for query", "HTTP")
+
+Rel(cve_db_api, cve_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(exploit_db_api, exploit_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(gost_db_api, gost_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(oval_db_api, oval_db, "Read DB for query data", "Golang DB and FS libraries")
+
+Lay_R(cve_db, exploit_db)
+Lay_R(exploit_db, gost_db)
+Lay_R(gost_db, oval_db)
+@enduml
