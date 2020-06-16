@@ -16,7 +16,7 @@ Below is a high-level overview of how scans examine vulnerabilities in an
 application's dependencies once deployed into test applications in the cloud.gov
 sandbox environment.
 
-![alt text](./docs/../scan_sequence_diagram.svg)
+![Vuls Scan Sequence Diagram](./docs/../scan_sequence_diagram.svg)
 
 (NOTE: This sequence diagram is derived from [updating this PlantUML file](./docs/../scan_sequence_diagram.puml).)
 
