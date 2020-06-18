@@ -1,8 +1,15 @@
 version: '3'
 services:
   vuls:
-    image: vuls/vuls:0.9.6
+    image: ohsh6o/delve
     command:
+      - debug
+      - /usr/local/src/github.com/future-architect/vuls
+      - --headless
+      - --listen=0.0.0.0:2345
+      - --continue
+      - --accept-multiclient
+      - --
       - server
       - -debug
       - -debug-sql
@@ -20,15 +27,19 @@ services:
       - -exploitdb-type=http
       - -exploitdb-url=http://exploitdb:1326
     volumes:
+      - /path/to/workstation/gopath/src:/usr/local/src
       - ./vuls:/vuls
       - ./log:/var/log
     ports:
+      - "2345:2345"
       - "5515:5515"
     links:
       - "cve:cvedb"
       - "oval:ovaldb"
       - "gost:gostdb"
       - "exploitdb"
+    security_opt:
+      - seccomp:unconfined
 
   cve:
     image: vuls/go-cve-dictionary
@@ -67,7 +78,7 @@ services:
       - "1326:1326"
 
   vulsrepo:
-      image: vuls/vulsrepo:latest
+      image: ishidaco/vulsrepo:latest
       command:
         - vulsrepo-server
       volumes:
