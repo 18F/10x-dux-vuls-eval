@@ -1,0 +1,32 @@
+
+FROM golang:alpine as dlv
+
+RUN apk add --no-cache \
+        git \
+        make \
+        gcc \
+        musl-dev
+
+ENV REPOSITORY github.com/go-delve/delve
+RUN go get $REPOSITORY/cmd/dlv
+
+FROM golang:alpine
+
+COPY --from=dlv /go/bin/dlv /usr/local/bin/
+
+ENV LOGDIR /var/log/vuls
+ENV WORKDIR /vuls
+ENV GOPATH /usr/local/
+
+RUN apk add --no-cache \
+        git \
+        make \
+        gcc \
+        musl-dev
+
+VOLUME ["$WORKDIR", "$LOGDIR"]
+WORKDIR $WORKDIR
+ENV PWD $WORKDIR
+
+ENTRYPOINT ["dlv"]
+CMD ["--help"]
