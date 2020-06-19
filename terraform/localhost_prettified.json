@@ -1,0 +1,697 @@
+{
+    "jsonVersion": 4,
+    "lang": "",
+    "serverUUID": "",
+    "serverName": "localhost",
+    "family": "amazon",
+    "release": "2 (Karoo)",
+    "container": {
+        "containerID": "",
+        "name": "",
+        "image": "",
+        "type": "",
+        "uuid": ""
+    },
+    "platform": {
+        "name": "unknown",
+        "instanceID": ""
+    },
+    "scannedAt": "2020-06-10T04:53:56.382337003Z",
+    "scanMode": " offline mode",
+    "scannedVersion": "0.9.6",
+    "scannedRevision": "",
+    "scannedBy": "ip-172-31-13-238.ec2.internal",
+    "scannedVia": "local",
+    "scannedIpv4Addrs": [
+        "172.31.13.238"
+    ],
+    "reportedAt": "0001-01-01T00:00:00Z",
+    "reportedVersion": "",
+    "reportedRevision": "",
+    "reportedBy": "",
+    "errors": [],
+    "warnings": [],
+    "scannedCves": {},
+    "runningKernel": {
+        "release": "",
+        "version": "",
+        "rebootRequired": false
+    },
+    "packages": {},
+    "libraries": [
+        {
+            "Path": "/home/ec2-user/10x-dux-app/package-lock.json",
+            "Libs": [
+                {
+                    "Name": "archiver",
+                    "Version": "1.3.0"
+                },
+                {
+                    "Name": "ansi-regex",
+                    "Version": "2.1.1"
+                },
+                {
+                    "Name": "compress-commons",
+                    "Version": "1.2.2"
+                },
+                {
+                    "Name": "end-of-stream",
+                    "Version": "1.4.4"
+                },
+                {
+                    "Name": "has-unicode",
+                    "Version": "2.0.1"
+                },
+                {
+                    "Name": "slide",
+                    "Version": "1.1.6"
+                },
+                {
+                    "Name": "text-table",
+                    "Version": "0.2.0"
+                },
+                {
+                    "Name": "columnify",
+                    "Version": "1.5.4"
+                },
+                {
+                    "Name": "lazy-property",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "nopt",
+                    "Version": "4.0.1"
+                },
+                {
+                    "Name": "strip-ansi",
+                    "Version": "3.0.1"
+                },
+                {
+                    "Name": "tar",
+                    "Version": "2.2.1"
+                },
+                {
+                    "Name": "which",
+                    "Version": "1.2.12"
+                },
+                {
+                    "Name": "cmd-shim",
+                    "Version": "2.0.2"
+                },
+                {
+                    "Name": "dezalgo",
+                    "Version": "1.0.3"
+                },
+                {
+                    "Name": "lodash._cacheindexof",
+                    "Version": "3.0.2"
+                },
+                {
+                    "Name": "wrappy",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "aproba",
+                    "Version": "1.1.1"
+                },
+                {
+                    "Name": "lockfile",
+                    "Version": "1.0.3"
+                },
+                {
+                    "Name": "lodash._baseuniq",
+                    "Version": "4.6.0"
+                },
+                {
+                    "Name": "lodash._getnative",
+                    "Version": "3.9.1"
+                },
+                {
+                    "Name": "normalize-git-url",
+                    "Version": "3.0.2"
+                },
+                {
+                    "Name": "npm-install-checks",
+                    "Version": "3.0.0"
+                },
+                {
+                    "Name": "read-installed",
+                    "Version": "4.0.3"
+                },
+                {
+                    "Name": "umask",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "npm",
+                    "Version": "4.4.1"
+                },
+                {
+                    "Name": "fstream",
+                    "Version": "1.0.10"
+                },
+                {
+                    "Name": "imurmurhash",
+                    "Version": "0.1.4"
+                },
+                {
+                    "Name": "lodash._createcache",
+                    "Version": "3.1.2"
+                },
+                {
+                    "Name": "node-gyp",
+                    "Version": "3.5.0"
+                },
+                {
+                    "Name": "npm-registry-client",
+                    "Version": "7.4.5"
+                },
+                {
+                    "Name": "path-is-inside",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "read-package-json",
+                    "Version": "2.0.4"
+                },
+                {
+                    "Name": "chownr",
+                    "Version": "1.0.1"
+                },
+                {
+                    "Name": "lodash._bindcallback",
+                    "Version": "3.0.1"
+                },
+                {
+                    "Name": "npm-cache-filename",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "config-chain",
+                    "Version": "1.1.11"
+                },
+                {
+                    "Name": "inflight",
+                    "Version": "1.0.6"
+                },
+                {
+                    "Name": "lodash.uniq",
+                    "Version": "4.5.0"
+                },
+                {
+                    "Name": "mississippi",
+                    "Version": "1.3.0"
+                },
+                {
+                    "Name": "osenv",
+                    "Version": "0.1.4"
+                },
+                {
+                    "Name": "editor",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "iferr",
+                    "Version": "0.1.5"
+                },
+                {
+                    "Name": "npm-user-validate",
+                    "Version": "0.1.5"
+                },
+                {
+                    "Name": "read-cmd-shim",
+                    "Version": "1.0.1"
+                },
+                {
+                    "Name": "sha",
+                    "Version": "2.0.1"
+                },
+                {
+                    "Name": "sorted-object",
+                    "Version": "2.0.1"
+                },
+                {
+                    "Name": "debuglog",
+                    "Version": "1.0.1"
+                },
+                {
+                    "Name": "graceful-fs",
+                    "Version": "4.1.11"
+                },
+                {
+                    "Name": "lodash._baseindexof",
+                    "Version": "3.1.0"
+                },
+                {
+                    "Name": "uid-number",
+                    "Version": "0.0.6"
+                },
+                {
+                    "Name": "unique-filename",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "ansicolors",
+                    "Version": "0.3.2"
+                },
+                {
+                    "Name": "asap",
+                    "Version": "2.0.5"
+                },
+                {
+                    "Name": "hosted-git-info",
+                    "Version": "2.2.0"
+                },
+                {
+                    "Name": "inherits",
+                    "Version": "2.0.3"
+                },
+                {
+                    "Name": "ini",
+                    "Version": "1.3.4"
+                },
+                {
+                    "Name": "normalize-package-data",
+                    "Version": "2.3.5"
+                },
+                {
+                    "Name": "npmlog",
+                    "Version": "4.0.2"
+                },
+                {
+                    "Name": "once",
+                    "Version": "1.4.0"
+                },
+                {
+                    "Name": "retry",
+                    "Version": "0.10.1"
+                },
+                {
+                    "Name": "unpipe",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "validate-npm-package-license",
+                    "Version": "3.0.1"
+                },
+                {
+                    "Name": "JSONStream",
+                    "Version": "1.3.0"
+                },
+                {
+                    "Name": "fstream-npm",
+                    "Version": "1.2.0"
+                },
+                {
+                    "Name": "init-package-json",
+                    "Version": "1.9.4"
+                },
+                {
+                    "Name": "lodash.restparam",
+                    "Version": "3.6.1"
+                },
+                {
+                    "Name": "mkdirp",
+                    "Version": "0.5.1"
+                },
+                {
+                    "Name": "update-notifier",
+                    "Version": "2.0.0"
+                },
+                {
+                    "Name": "ansistyles",
+                    "Version": "0.1.3"
+                },
+                {
+                    "Name": "fs-vacuum",
+                    "Version": "1.2.9"
+                },
+                {
+                    "Name": "glob",
+                    "Version": "7.1.1"
+                },
+                {
+                    "Name": "request",
+                    "Version": "2.79.0"
+                },
+                {
+                    "Name": "sorted-union-stream",
+                    "Version": "2.1.3"
+                },
+                {
+                    "Name": "fs-write-stream-atomic",
+                    "Version": "1.0.8"
+                },
+                {
+                    "Name": "lodash.clonedeep",
+                    "Version": "4.5.0"
+                },
+                {
+                    "Name": "opener",
+                    "Version": "1.4.3"
+                },
+                {
+                    "Name": "read",
+                    "Version": "1.0.7"
+                },
+                {
+                    "Name": "read-package-tree",
+                    "Version": "5.1.5"
+                },
+                {
+                    "Name": "realize-package-specifier",
+                    "Version": "3.0.3"
+                },
+                {
+                    "Name": "rimraf",
+                    "Version": "2.6.0"
+                },
+                {
+                    "Name": "abbrev",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "archy",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "lodash.without",
+                    "Version": "4.4.0"
+                },
+                {
+                    "Name": "readdir-scoped-modules",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "semver",
+                    "Version": "5.3.0"
+                },
+                {
+                    "Name": "write-file-atomic",
+                    "Version": "1.3.1"
+                },
+                {
+                    "Name": "lodash.union",
+                    "Version": "4.6.0"
+                },
+                {
+                    "Name": "npm-package-arg",
+                    "Version": "4.2.0"
+                },
+                {
+                    "Name": "readable-stream",
+                    "Version": "2.2.3"
+                },
+                {
+                    "Name": "uuid",
+                    "Version": "3.0.1"
+                },
+                {
+                    "Name": "validate-npm-package-name",
+                    "Version": "3.0.0"
+                },
+                {
+                    "Name": "process-nextick-args",
+                    "Version": "2.0.1"
+                },
+                {
+                    "Name": "rechoir",
+                    "Version": "0.6.2"
+                },
+                {
+                    "Name": "resolve",
+                    "Version": "1.17.0"
+                },
+                {
+                    "Name": "lodash",
+                    "Version": "4.17.15"
+                },
+                {
+                    "Name": "buffer-alloc-unsafe",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "buffer-fill",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "escape-string-regexp",
+                    "Version": "1.0.5"
+                },
+                {
+                    "Name": "ieee754",
+                    "Version": "1.1.13"
+                },
+                {
+                    "Name": "inherits",
+                    "Version": "2.0.4"
+                },
+                {
+                    "Name": "buffer-alloc",
+                    "Version": "1.2.0"
+                },
+                {
+                    "Name": "buffer-crc32",
+                    "Version": "0.2.13"
+                },
+                {
+                    "Name": "chalk",
+                    "Version": "1.1.3"
+                },
+                {
+                    "Name": "buffer",
+                    "Version": "5.6.0"
+                },
+                {
+                    "Name": "crc32-stream",
+                    "Version": "2.0.0"
+                },
+                {
+                    "Name": "path-is-absolute",
+                    "Version": "1.0.1"
+                },
+                {
+                    "Name": "string_decoder",
+                    "Version": "1.1.1"
+                },
+                {
+                    "Name": "walkdir",
+                    "Version": "0.0.11"
+                },
+                {
+                    "Name": "archiver-utils",
+                    "Version": "1.3.0"
+                },
+                {
+                    "Name": "lazystream",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "minimatch",
+                    "Version": "3.0.4"
+                },
+                {
+                    "Name": "base64-js",
+                    "Version": "1.3.1"
+                },
+                {
+                    "Name": "glob",
+                    "Version": "7.1.6"
+                },
+                {
+                    "Name": "remove-trailing-separator",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "safe-buffer",
+                    "Version": "5.1.2"
+                },
+                {
+                    "Name": "bl",
+                    "Version": "1.2.2"
+                },
+                {
+                    "Name": "concat-map",
+                    "Version": "0.0.1"
+                },
+                {
+                    "Name": "core-util-is",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "normalize-path",
+                    "Version": "2.1.1"
+                },
+                {
+                    "Name": "fs-constants",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "readable-stream",
+                    "Version": "2.3.7"
+                },
+                {
+                    "Name": "supports-color",
+                    "Version": "2.0.0"
+                },
+                {
+                    "Name": "fs.realpath",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "graceful-fs",
+                    "Version": "4.2.4"
+                },
+                {
+                    "Name": "isarray",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "tar-stream",
+                    "Version": "1.6.2"
+                },
+                {
+                    "Name": "to-buffer",
+                    "Version": "1.1.1"
+                },
+                {
+                    "Name": "ansi-styles",
+                    "Version": "2.2.1"
+                },
+                {
+                    "Name": "crc",
+                    "Version": "3.8.0"
+                },
+                {
+                    "Name": "path-parse",
+                    "Version": "1.0.6"
+                },
+                {
+                    "Name": "shelljs",
+                    "Version": "0.7.7"
+                },
+                {
+                    "Name": "brace-expansion",
+                    "Version": "1.1.11"
+                },
+                {
+                    "Name": "has-ansi",
+                    "Version": "2.0.0"
+                },
+                {
+                    "Name": "zip-stream",
+                    "Version": "1.2.0"
+                },
+                {
+                    "Name": "async",
+                    "Version": "2.6.3"
+                },
+                {
+                    "Name": "balanced-match",
+                    "Version": "1.0.0"
+                },
+                {
+                    "Name": "interpret",
+                    "Version": "1.4.0"
+                },
+                {
+                    "Name": "jquery",
+                    "Version": "3.3.0"
+                },
+                {
+                    "Name": "util-deprecate",
+                    "Version": "1.0.2"
+                },
+                {
+                    "Name": "xtend",
+                    "Version": "4.0.2"
+                }
+            ]
+        },
+        {
+            "Path": "/home/ec2-user/10x-dux-app/Pipfile.lock",
+            "Libs": [
+                {
+                    "Name": "itsdangerous",
+                    "Version": "1.1.0"
+                },
+                {
+                    "Name": "jinja2",
+                    "Version": "2.11.2"
+                },
+                {
+                    "Name": "markupsafe",
+                    "Version": "1.1.1"
+                },
+                {
+                    "Name": "urllib3",
+                    "Version": "1.24.2"
+                },
+                {
+                    "Name": "werkzeug",
+                    "Version": "1.0.1"
+                },
+                {
+                    "Name": "click",
+                    "Version": "7.1.2"
+                },
+                {
+                    "Name": "flask",
+                    "Version": "1.0"
+                }
+            ]
+        }
+    ],
+    "config": {
+        "scan": {
+            "logDir": "/var/log/vuls",
+            "resultsDir": "/home/ec2-user/results",
+            "default": {
+                "wordpress": {}
+            },
+            "servers": {
+                "localhost": {
+                    "serverName": "localhost",
+                    "host": "localhost",
+                    "port": "local",
+                    "scanMode": [
+                        "offline"
+                    ],
+                    "findLock": true,
+                    "wordpress": {}
+                }
+            },
+            "libsOnly": true,
+            "cacheDBPath": "/home/ec2-user/cache.db",
+            "cveDict": {
+                "Type": ""
+            },
+            "ovalDict": {
+                "Type": ""
+            },
+            "gost": {
+                "Type": ""
+            },
+            "exploit": {
+                "Type": ""
+            }
+        },
+        "report": {
+            "default": {
+                "wordpress": {}
+            },
+            "cveDict": {
+                "Type": ""
+            },
+            "ovalDict": {
+                "Type": ""
+            },
+            "gost": {
+                "Type": ""
+            },
+            "exploit": {
+                "Type": ""
+            }
+        }
+    }
+}

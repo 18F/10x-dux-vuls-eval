@@ -1,0 +1,973 @@
+{
+  "jsonVersion": 4,
+  "lang": "en",
+  "serverUUID": "",
+  "serverName": "localhost",
+  "family": "amazon",
+  "release": "2 (Karoo)",
+  "container": {
+    "containerID": "",
+    "name": "",
+    "image": "",
+    "type": "",
+    "uuid": ""
+  },
+  "platform": { "name": "unknown", "instanceID": "" },
+  "scannedAt": "2020-06-10T04:53:56.382337003Z",
+  "scanMode": " offline mode",
+  "scannedVersion": "0.9.6",
+  "scannedRevision": "",
+  "scannedBy": "ip-172-31-13-238.ec2.internal",
+  "scannedVia": "local",
+  "scannedIpv4Addrs": ["172.31.13.238"],
+  "reportedAt": "2020-06-10T05:41:08.2864098Z",
+  "reportedVersion": "v0.9.6",
+  "reportedRevision": "build-20200527_114236_835dc08",
+  "reportedBy": "8ee24f3dec4a",
+  "errors": [],
+  "warnings": [],
+  "scannedCves": {
+    "CVE-2019-11358": {
+      "cveID": "CVE-2019-11358",
+      "confidences": [{ "score": 100, "detectionMethod": "TrivyMatch" }],
+      "cveContents": {
+        "jvn": {
+          "type": "jvn",
+          "cveID": "CVE-2019-11358",
+          "title": "Drupal などの製品で使用される jQuery におけるクロスサイトスクリプティングの脆弱性",
+          "summary": "Drupal およびその他の製品で使用される jQuery には、クロスサイトスクリプティングの脆弱性が存在します。",
+          "cvss2Score": 4.3,
+          "cvss2Vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+          "cvss2Severity": "Medium",
+          "cvss3Score": 6.1,
+          "cvss3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvss3Severity": "Medium",
+          "sourceLink": "https://jvndb.jvn.jp/ja/contents/2019/JVNDB-2019-003792.html",
+          "references": [
+            {
+              "source": "CVE",
+              "link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11358",
+              "refID": ""
+            },
+            {
+              "source": "NVD",
+              "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11358",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+              "refID": ""
+            }
+          ],
+          "published": "2019-05-22T17:52:00+09:00",
+          "lastModified": "2019-05-22T17:52:00+09:00",
+          "mitigation": ""
+        },
+        "nvd": {
+          "type": "nvd",
+          "cveID": "CVE-2019-11358",
+          "title": "",
+          "summary": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.",
+          "cvss2Score": 4.3,
+          "cvss2Vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+          "cvss2Severity": "MEDIUM",
+          "cvss3Score": 6.1,
+          "cvss3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          "cvss3Severity": "MEDIUM",
+          "sourceLink": "https://nvd.nist.gov/vuln/detail/CVE-2019-11358",
+          "references": [
+            {
+              "source": "",
+              "link": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://packetstormsecurity.com/files/153237/RetireJS-CORS-Issue-Script-Execution.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://seclists.org/fulldisclosure/2019/May/10",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://seclists.org/fulldisclosure/2019/May/11",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://seclists.org/fulldisclosure/2019/May/13",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://www.openwall.com/lists/oss-security/2019/06/03/2",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "http://www.securityfocus.com/bid/108023",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://access.redhat.com/errata/RHBA-2019:1570",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://access.redhat.com/errata/RHSA-2019:1456",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://access.redhat.com/errata/RHSA-2019:2587",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://backdropcms.org/security/backdrop-sa-core-2019-009",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://github.com/jquery/jquery/pull/4333",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/08720ef215ee7ab3386c05a1a90a7d1c852bf0706f176a7816bf65fc@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/5928aa293e39d248266472210c50f176cac1535220f2486e6a7fa844@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/6097cdbd6f0a337bedd9bb5cc441b2d525ff002a96531de367e4259f@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/88fb0362fd40e5b605ea8149f63241537b8b6fb5bfa315391fc5cbb7@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/b736d0784cf02f5a30fbb4c5902762a15ad6d47e17e2c5a17b7d6205@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.apache.org/thread.html/ba79cf1658741e9f146e4c59b50aee56656ea95d841d358d006c18b6@%3Ccommits.roller.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.debian.org/debian-lts-announce/2019/05/msg00006.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.debian.org/debian-lts-announce/2019/05/msg00029.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4UOAZIFCSZ3ENEFOR5IXX6NFAD3HV7FA/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5IABSKTYZ5JUGL735UKGXL5YPRYOPUYI/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KYH3OAGR2RTCHRA5NOKX2TES7SNQMWGO/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QV3PKZC3PQCO3273HAT76PAQZFBEO4KP/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RLXRX23725JL366CNZGJZ7AQQB7LHQ6F/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WZW27UCJ5CYFL4KFFFMYMIBNMIU2ALG5/",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://seclists.org/bugtraq/2019/Apr/32",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://seclists.org/bugtraq/2019/Jun/12",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://seclists.org/bugtraq/2019/May/18",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://snyk.io/vuln/SNYK-JS-JQUERY-174006",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://www.debian.org/security/2019/dsa-4434",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://www.debian.org/security/2019/dsa-4460",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://www.drupal.org/sa-core-2019-006",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+              "refID": ""
+            },
+            {
+              "source": "",
+              "link": "https://www.privacy-wise.com/mitigating-cve-2019-11358-in-old-versions-of-jquery/",
+              "refID": ""
+            }
+          ],
+          "cweIDs": ["CWE-79"],
+          "published": "2019-04-20T00:29:00Z",
+          "lastModified": "2019-06-12T17:29:00Z",
+          "mitigation": ""
+        },
+        "redhat_api": {
+          "type": "redhat_api",
+          "cveID": "CVE-2019-11358",
+          "title": "CVE-2019-11358 js-jquery: prototype pollution in object's prototype leading to denial of service or remote code execution or property injection",
+          "summary": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.\nA Prototype Pollution vulnerability was found in jquery. Untrusted JSON passed to the `extend` function could lead to modifying objects up the prototype chain, including the global Object. A crafted JSON object passed to a vulnerable method could lead to denial of service or data injection, with various consequences.",
+          "cvss2Score": 0,
+          "cvss2Vector": "",
+          "cvss2Severity": "",
+          "cvss3Score": 5.6,
+          "cvss3Vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cvss3Severity": "Moderate",
+          "sourceLink": "https://access.redhat.com/security/cve/CVE-2019-11358",
+          "references": [
+            {
+              "source": "",
+              "link": "https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\nhttps://www.drupal.org/sa-core-2019-006",
+              "refID": ""
+            }
+          ],
+          "cweIDs": ["CWE-79"],
+          "published": "2019-03-27T00:00:00Z",
+          "lastModified": "0001-01-01T00:00:00Z",
+          "mitigation": ""
+        },
+        "trivy": {
+          "type": "trivy",
+          "cveID": "CVE-2019-11358",
+          "title": "js-jquery: prototype pollution in object's prototype leading to denial of service or remote code execution or property injection",
+          "summary": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.",
+          "cvss2Score": 0,
+          "cvss2Vector": "",
+          "cvss2Severity": "",
+          "cvss3Score": 0,
+          "cvss3Vector": "",
+          "cvss3Severity": "MEDIUM",
+          "sourceLink": "",
+          "references": [
+            {
+              "source": "trivy",
+              "link": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00006.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00025.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://packetstormsecurity.com/files/153237/RetireJS-CORS-Issue-Script-Execution.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://seclists.org/fulldisclosure/2019/May/10",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://seclists.org/fulldisclosure/2019/May/11",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://seclists.org/fulldisclosure/2019/May/13",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://www.openwall.com/lists/oss-security/2019/06/03/2",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "http://www.securityfocus.com/bid/108023",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://access.redhat.com/errata/RHBA-2019:1570",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://access.redhat.com/errata/RHSA-2019:1456",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://access.redhat.com/errata/RHSA-2019:2587",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://access.redhat.com/errata/RHSA-2019:3023",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://access.redhat.com/errata/RHSA-2019:3024",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://backdropcms.org/security/backdrop-sa-core-2019-009",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11358",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://github.com/advisories/GHSA-6c3j-c64m-qhgq",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://github.com/jquery/jquery/pull/4333",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://github.com/rails/jquery-rails/blob/master/CHANGELOG.md#434",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://hackerone.com/reports/454365",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/08720ef215ee7ab3386c05a1a90a7d1c852bf0706f176a7816bf65fc@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/5928aa293e39d248266472210c50f176cac1535220f2486e6a7fa844@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/6097cdbd6f0a337bedd9bb5cc441b2d525ff002a96531de367e4259f@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/88fb0362fd40e5b605ea8149f63241537b8b6fb5bfa315391fc5cbb7@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/b736d0784cf02f5a30fbb4c5902762a15ad6d47e17e2c5a17b7d6205@%3Ccommits.airflow.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/ba79cf1658741e9f146e4c59b50aee56656ea95d841d358d006c18b6@%3Ccommits.roller.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/bcce5a9c532b386c68dab2f6b3ce8b0cc9b950ec551766e76391caa3@%3Ccommits.nifi.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r2041a75d3fc09dec55adfd95d598b38d22715303f65c997c054844c9@%3Cissues.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r2baacab6e0acb5a2092eb46ae04fd6c3e8277b4fd79b1ffb7f3254fa@%3Cissues.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r38f0d1aa3c923c22977fe7376508f030f22e22c1379fbb155bf29766@%3Cdev.syncope.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r41b5bfe009c845f67d4f68948cc9419ac2d62e287804aafd72892b08@%3Cissues.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r7aac081cbddb6baa24b75e74abf0929bf309b176755a53e3ed810355@%3Cdev.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/r7e8ebccb7c022e41295f6fdb7b971209b83702339f872ddd8cf8bf73@%3Cissues.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/rac25da84ecdcd36f6de5ad0d255f4e967209bbbebddb285e231da37d@%3Cissues.flink.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.debian.org/debian-lts-announce/2019/05/msg00006.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.debian.org/debian-lts-announce/2019/05/msg00029.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.debian.org/debian-lts-announce/2020/02/msg00024.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4UOAZIFCSZ3ENEFOR5IXX6NFAD3HV7FA/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5IABSKTYZ5JUGL735UKGXL5YPRYOPUYI/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KYH3OAGR2RTCHRA5NOKX2TES7SNQMWGO/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/QV3PKZC3PQCO3273HAT76PAQZFBEO4KP/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RLXRX23725JL366CNZGJZ7AQQB7LHQ6F/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WZW27UCJ5CYFL4KFFFMYMIBNMIU2ALG5/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11358",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://seclists.org/bugtraq/2019/Apr/32",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://seclists.org/bugtraq/2019/Jun/12",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://seclists.org/bugtraq/2019/May/18",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://security.netapp.com/advisory/ntap-20190919-0001/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://snyk.io/vuln/SNYK-JS-JQUERY-174006",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.debian.org/security/2019/dsa-4434",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.debian.org/security/2019/dsa-4460",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.drupal.org/sa-core-2019-006",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.oracle.com/security-alerts/cpuapr2020.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.oracle.com/security-alerts/cpujan2020.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.privacy-wise.com/mitigating-cve-2019-11358-in-old-versions-of-jquery/",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.synology.com/security/advisory/Synology_SA_19_19",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.tenable.com/security/tns-2019-08",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://www.tenable.com/security/tns-2020-02",
+              "refID": ""
+            }
+          ],
+          "published": "0001-01-01T00:00:00Z",
+          "lastModified": "0001-01-01T00:00:00Z",
+          "mitigation": ""
+        }
+      },
+      "alertDict": { "ja": null, "en": null },
+      "libraryFixedIns": [
+        { "key": "node", "name": "jquery", "fixedIn": "\u003e=3.4.0" }
+      ]
+    },
+    "CVE-2019-5428": {
+      "cveID": "CVE-2019-5428",
+      "confidences": [{ "score": 100, "detectionMethod": "TrivyMatch" }],
+      "cveContents": {
+        "nvd": {
+          "type": "nvd",
+          "cveID": "CVE-2019-5428",
+          "title": "",
+          "summary": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2019-11358. Reason: This candidate is a duplicate of CVE-2019-11358. Notes: All CVE users should reference CVE-2019-11358 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+          "cvss2Score": 0,
+          "cvss2Vector": "",
+          "cvss2Severity": "",
+          "cvss3Score": 0,
+          "cvss3Vector": "",
+          "cvss3Severity": "",
+          "sourceLink": "https://nvd.nist.gov/vuln/detail/CVE-2019-5428",
+          "published": "2019-04-22T21:29:00Z",
+          "lastModified": "2019-04-25T16:29:00Z",
+          "mitigation": ""
+        },
+        "trivy": {
+          "type": "trivy",
+          "cveID": "CVE-2019-5428",
+          "title": "Modification of Assumed-Immutable Data (MAID)",
+          "summary": "** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2019-11358. Reason: This candidate is a duplicate of CVE-2019-11358. Notes: All CVE users should reference CVE-2019-11358 instead of this candidate. All references and descriptions in this candidate have been removed to prevent accidental usage.",
+          "cvss2Score": 0,
+          "cvss2Vector": "",
+          "cvss2Severity": "",
+          "cvss3Score": 0,
+          "cvss3Vector": "",
+          "cvss3Severity": "MEDIUM",
+          "sourceLink": "",
+          "references": [
+            {
+              "source": "trivy",
+              "link": "https://github.com/advisories/GHSA-wv67-q8rr-grjp",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://hackerone.com/reports/454365",
+              "refID": ""
+            },
+            {
+              "source": "trivy",
+              "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5428",
+              "refID": ""
+            }
+          ],
+          "published": "0001-01-01T00:00:00Z",
+          "lastModified": "0001-01-01T00:00:00Z",
+          "mitigation": ""
+        }
+      },
+      "alertDict": { "ja": null, "en": null },
+      "libraryFixedIns": [
+        { "key": "node", "name": "jquery", "fixedIn": "\u003e=3.4.0" }
+      ]
+    },
+    "NSWG-ECO-516": {
+      "cveID": "NSWG-ECO-516",
+      "confidences": [{ "score": 100, "detectionMethod": "TrivyMatch" }],
+      "cveContents": {
+        "trivy": {
+          "type": "trivy",
+          "cveID": "NSWG-ECO-516",
+          "title": "Allocation of Resources Without Limits or Throttling",
+          "summary": "Prototype pollution attack (lodash)",
+          "cvss2Score": 0,
+          "cvss2Vector": "",
+          "cvss2Severity": "",
+          "cvss3Score": 0,
+          "cvss3Vector": "",
+          "cvss3Severity": "HIGH",
+          "sourceLink": "",
+          "references": [
+            {
+              "source": "trivy",
+              "link": "https://hackerone.com/reports/712065",
+              "refID": ""
+            }
+          ],
+          "published": "0001-01-01T00:00:00Z",
+          "lastModified": "0001-01-01T00:00:00Z",
+          "mitigation": ""
+        }
+      },
+      "alertDict": { "ja": null, "en": null }
+    }
+  },
+  "runningKernel": { "release": "", "version": "", "rebootRequired": false },
+  "packages": {},
+  "libraries": [
+    {
+      "Path": "/home/ec2-user/10x-dux-app/package-lock.json",
+      "Libs": [
+        { "Name": "archiver", "Version": "1.3.0" },
+        { "Name": "ansi-regex", "Version": "2.1.1" },
+        { "Name": "compress-commons", "Version": "1.2.2" },
+        { "Name": "end-of-stream", "Version": "1.4.4" },
+        { "Name": "has-unicode", "Version": "2.0.1" },
+        { "Name": "slide", "Version": "1.1.6" },
+        { "Name": "text-table", "Version": "0.2.0" },
+        { "Name": "columnify", "Version": "1.5.4" },
+        { "Name": "lazy-property", "Version": "1.0.0" },
+        { "Name": "nopt", "Version": "4.0.1" },
+        { "Name": "strip-ansi", "Version": "3.0.1" },
+        { "Name": "tar", "Version": "2.2.1" },
+        { "Name": "which", "Version": "1.2.12" },
+        { "Name": "cmd-shim", "Version": "2.0.2" },
+        { "Name": "dezalgo", "Version": "1.0.3" },
+        { "Name": "lodash._cacheindexof", "Version": "3.0.2" },
+        { "Name": "wrappy", "Version": "1.0.2" },
+        { "Name": "aproba", "Version": "1.1.1" },
+        { "Name": "lockfile", "Version": "1.0.3" },
+        { "Name": "lodash._baseuniq", "Version": "4.6.0" },
+        { "Name": "lodash._getnative", "Version": "3.9.1" },
+        { "Name": "normalize-git-url", "Version": "3.0.2" },
+        { "Name": "npm-install-checks", "Version": "3.0.0" },
+        { "Name": "read-installed", "Version": "4.0.3" },
+        { "Name": "umask", "Version": "1.1.0" },
+        { "Name": "npm", "Version": "4.4.1" },
+        { "Name": "fstream", "Version": "1.0.10" },
+        { "Name": "imurmurhash", "Version": "0.1.4" },
+        { "Name": "lodash._createcache", "Version": "3.1.2" },
+        { "Name": "node-gyp", "Version": "3.5.0" },
+        { "Name": "npm-registry-client", "Version": "7.4.5" },
+        { "Name": "path-is-inside", "Version": "1.0.2" },
+        { "Name": "read-package-json", "Version": "2.0.4" },
+        { "Name": "chownr", "Version": "1.0.1" },
+        { "Name": "lodash._bindcallback", "Version": "3.0.1" },
+        { "Name": "npm-cache-filename", "Version": "1.0.2" },
+        { "Name": "config-chain", "Version": "1.1.11" },
+        { "Name": "inflight", "Version": "1.0.6" },
+        { "Name": "lodash.uniq", "Version": "4.5.0" },
+        { "Name": "mississippi", "Version": "1.3.0" },
+        { "Name": "osenv", "Version": "0.1.4" },
+        { "Name": "editor", "Version": "1.0.0" },
+        { "Name": "iferr", "Version": "0.1.5" },
+        { "Name": "npm-user-validate", "Version": "0.1.5" },
+        { "Name": "read-cmd-shim", "Version": "1.0.1" },
+        { "Name": "sha", "Version": "2.0.1" },
+        { "Name": "sorted-object", "Version": "2.0.1" },
+        { "Name": "debuglog", "Version": "1.0.1" },
+        { "Name": "graceful-fs", "Version": "4.1.11" },
+        { "Name": "lodash._baseindexof", "Version": "3.1.0" },
+        { "Name": "uid-number", "Version": "0.0.6" },
+        { "Name": "unique-filename", "Version": "1.1.0" },
+        { "Name": "ansicolors", "Version": "0.3.2" },
+        { "Name": "asap", "Version": "2.0.5" },
+        { "Name": "hosted-git-info", "Version": "2.2.0" },
+        { "Name": "inherits", "Version": "2.0.3" },
+        { "Name": "ini", "Version": "1.3.4" },
+        { "Name": "normalize-package-data", "Version": "2.3.5" },
+        { "Name": "npmlog", "Version": "4.0.2" },
+        { "Name": "once", "Version": "1.4.0" },
+        { "Name": "retry", "Version": "0.10.1" },
+        { "Name": "unpipe", "Version": "1.0.0" },
+        { "Name": "validate-npm-package-license", "Version": "3.0.1" },
+        { "Name": "JSONStream", "Version": "1.3.0" },
+        { "Name": "fstream-npm", "Version": "1.2.0" },
+        { "Name": "init-package-json", "Version": "1.9.4" },
+        { "Name": "lodash.restparam", "Version": "3.6.1" },
+        { "Name": "mkdirp", "Version": "0.5.1" },
+        { "Name": "update-notifier", "Version": "2.0.0" },
+        { "Name": "ansistyles", "Version": "0.1.3" },
+        { "Name": "fs-vacuum", "Version": "1.2.9" },
+        { "Name": "glob", "Version": "7.1.1" },
+        { "Name": "request", "Version": "2.79.0" },
+        { "Name": "sorted-union-stream", "Version": "2.1.3" },
+        { "Name": "fs-write-stream-atomic", "Version": "1.0.8" },
+        { "Name": "lodash.clonedeep", "Version": "4.5.0" },
+        { "Name": "opener", "Version": "1.4.3" },
+        { "Name": "read", "Version": "1.0.7" },
+        { "Name": "read-package-tree", "Version": "5.1.5" },
+        { "Name": "realize-package-specifier", "Version": "3.0.3" },
+        { "Name": "rimraf", "Version": "2.6.0" },
+        { "Name": "abbrev", "Version": "1.1.0" },
+        { "Name": "archy", "Version": "1.0.0" },
+        { "Name": "lodash.without", "Version": "4.4.0" },
+        { "Name": "readdir-scoped-modules", "Version": "1.0.2" },
+        { "Name": "semver", "Version": "5.3.0" },
+        { "Name": "write-file-atomic", "Version": "1.3.1" },
+        { "Name": "lodash.union", "Version": "4.6.0" },
+        { "Name": "npm-package-arg", "Version": "4.2.0" },
+        { "Name": "readable-stream", "Version": "2.2.3" },
+        { "Name": "uuid", "Version": "3.0.1" },
+        { "Name": "validate-npm-package-name", "Version": "3.0.0" },
+        { "Name": "process-nextick-args", "Version": "2.0.1" },
+        { "Name": "rechoir", "Version": "0.6.2" },
+        { "Name": "resolve", "Version": "1.17.0" },
+        { "Name": "lodash", "Version": "4.17.15" },
+        { "Name": "buffer-alloc-unsafe", "Version": "1.1.0" },
+        { "Name": "buffer-fill", "Version": "1.0.0" },
+        { "Name": "escape-string-regexp", "Version": "1.0.5" },
+        { "Name": "ieee754", "Version": "1.1.13" },
+        { "Name": "inherits", "Version": "2.0.4" },
+        { "Name": "buffer-alloc", "Version": "1.2.0" },
+        { "Name": "buffer-crc32", "Version": "0.2.13" },
+        { "Name": "chalk", "Version": "1.1.3" },
+        { "Name": "buffer", "Version": "5.6.0" },
+        { "Name": "crc32-stream", "Version": "2.0.0" },
+        { "Name": "path-is-absolute", "Version": "1.0.1" },
+        { "Name": "string_decoder", "Version": "1.1.1" },
+        { "Name": "walkdir", "Version": "0.0.11" },
+        { "Name": "archiver-utils", "Version": "1.3.0" },
+        { "Name": "lazystream", "Version": "1.0.0" },
+        { "Name": "minimatch", "Version": "3.0.4" },
+        { "Name": "base64-js", "Version": "1.3.1" },
+        { "Name": "glob", "Version": "7.1.6" },
+        { "Name": "remove-trailing-separator", "Version": "1.1.0" },
+        { "Name": "safe-buffer", "Version": "5.1.2" },
+        { "Name": "bl", "Version": "1.2.2" },
+        { "Name": "concat-map", "Version": "0.0.1" },
+        { "Name": "core-util-is", "Version": "1.0.2" },
+        { "Name": "normalize-path", "Version": "2.1.1" },
+        { "Name": "fs-constants", "Version": "1.0.0" },
+        { "Name": "readable-stream", "Version": "2.3.7" },
+        { "Name": "supports-color", "Version": "2.0.0" },
+        { "Name": "fs.realpath", "Version": "1.0.0" },
+        { "Name": "graceful-fs", "Version": "4.2.4" },
+        { "Name": "isarray", "Version": "1.0.0" },
+        { "Name": "tar-stream", "Version": "1.6.2" },
+        { "Name": "to-buffer", "Version": "1.1.1" },
+        { "Name": "ansi-styles", "Version": "2.2.1" },
+        { "Name": "crc", "Version": "3.8.0" },
+        { "Name": "path-parse", "Version": "1.0.6" },
+        { "Name": "shelljs", "Version": "0.7.7" },
+        { "Name": "brace-expansion", "Version": "1.1.11" },
+        { "Name": "has-ansi", "Version": "2.0.0" },
+        { "Name": "zip-stream", "Version": "1.2.0" },
+        { "Name": "async", "Version": "2.6.3" },
+        { "Name": "balanced-match", "Version": "1.0.0" },
+        { "Name": "interpret", "Version": "1.4.0" },
+        { "Name": "jquery", "Version": "3.3.0" },
+        { "Name": "util-deprecate", "Version": "1.0.2" },
+        { "Name": "xtend", "Version": "4.0.2" }
+      ]
+    },
+    {
+      "Path": "/home/ec2-user/10x-dux-app/Pipfile.lock",
+      "Libs": [
+        { "Name": "itsdangerous", "Version": "1.1.0" },
+        { "Name": "jinja2", "Version": "2.11.2" },
+        { "Name": "markupsafe", "Version": "1.1.1" },
+        { "Name": "urllib3", "Version": "1.24.2" },
+        { "Name": "werkzeug", "Version": "1.0.1" },
+        { "Name": "click", "Version": "7.1.2" },
+        { "Name": "flask", "Version": "1.0" }
+      ]
+    }
+  ],
+  "cweDict": {
+    "79": {
+      "en": {
+        "cweID": "79",
+        "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+        "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.",
+        "extendedDescription": ""
+      },
+      "owaspTopTen2017": "7",
+      "cweTopTwentyfive2019": "2",
+      "sansTopTwentyfive": "4"
+    }
+  },
+  "config": {
+    "scan": {
+      "logDir": "/var/log/vuls",
+      "resultsDir": "/home/ec2-user/results",
+      "default": { "wordpress": {} },
+      "servers": {
+        "localhost": {
+          "serverName": "localhost",
+          "host": "localhost",
+          "port": "local",
+          "scanMode": ["offline"],
+          "findLock": true,
+          "wordpress": {}
+        }
+      },
+      "libsOnly": true,
+      "cacheDBPath": "/home/ec2-user/cache.db",
+      "cveDict": { "Type": "" },
+      "ovalDict": { "Type": "" },
+      "gost": { "Type": "" },
+      "exploit": { "Type": "" }
+    },
+    "report": {
+      "lang": "en",
+      "logDir": "/var/log/vuls",
+      "resultsDir": "/vuls/results",
+      "default": { "wordpress": {} },
+      "servers": {
+        "localhost": {
+          "serverName": "localhost",
+          "host": "localhost",
+          "port": "local",
+          "scanMode": ["fast", "offline"],
+          "findLock": true,
+          "wordpress": {}
+        }
+      },
+      "trivyCacheDBDir": "/root/.cache/trivy",
+      "cveDict": { "Type": "sqlite3" },
+      "ovalDict": { "Type": "sqlite3" },
+      "gost": { "Type": "sqlite3" },
+      "exploit": { "Type": "sqlite3" }
+    }
+  }
+}
