@@ -15,13 +15,13 @@ Person(cgeng, "Cloud.gov Engineer")
 
 Person(cgisso, "Cloud.gov Security Offical")
 
-System_Boundary(c1, "Cloud.gov") {
+System_Boundary(cg, "Cloud.gov") {
 
     Container(app, "App Instance", "Javascript, Python, Shell", "App instance in Cloud.gov")
 
 }
 
-System_Boundary(c2, "AWS Account for Vuls") {
+System_Boundary(vulsaws, "Vuls Prototype AWS Account") {
 
     Container(vuls_repo, "Vuls Reporting UI", "Golang, Javascript, HTML", "An API serving report data and visualizing reporting info")
 
@@ -46,7 +46,7 @@ System_Boundary(c2, "AWS Account for Vuls") {
     ContainerDb(oval_db, "OVAL DB", "SQLite", "DB for OVAL data for Alpine, Amazon, Debian, Oracle, RedHat, SUSE, and Ubuntu Linux")
 }
 
-System_Boundary(c3, "Github") {
+System_Boundary(gh, "Github") {
     Container(vuls_cf_buildpack, "Vuls CloudFoundry Buildpack", "Shell", "Repo for Vuls CloudFoundry Buildpack")
 }
 
