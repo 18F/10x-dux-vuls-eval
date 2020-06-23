@@ -9,6 +9,18 @@ skinparam maxMessageSize 200
 LAYOUT_TOP_DOWN
 LAYOUT_WITH_LEGEND()
 
+Person(dev, "Application Developer")
+
+Person(cgeng, "Cloud.gov Engineer")
+
+Person(cgisso, "Cloud.gov Security Offical")
+
+System_Boundary(c1, "Cloud.gov") {
+
+    Container(app, "App Instance", "Javascript, Python, Shell", "App instance in Cloud.gov")
+
+}
+
 System_Boundary(c2, "AWS Account for Vuls") {
 
     Container(vuls_repo, "Vuls Reporting UI", "Golang, Javascript, HTML", "An API serving report data and visualizing reporting info")
@@ -34,20 +46,25 @@ System_Boundary(c2, "AWS Account for Vuls") {
     ContainerDb(oval_db, "OVAL DB", "SQLite", "DB for OVAL data for Alpine, Amazon, Debian, Oracle, RedHat, SUSE, and Ubuntu Linux")
 }
 
+System_Boundary(c3, "Github") {
+    Container(vuls_cf_buildpack, "Vuls CloudFoundry Buildpack", "Shell", "Repo for Vuls CloudFoundry Buildpack")
+}
+
+Rel_L(dev, app, "Deploy app instances to cloud.gov", "CloudFoundry CLI tools")
+Rel_L(cgeng, vuls_cf_buildpack, "Cloud.gov engineer adapts buildpack accordingly", "Git via HTTPS")
+Rel(vuls_cf_buildpack, app, "Retrieve buildpack contents", "Git via HTTPS")
+Rel_R(app, vuls_api, "Send OS and library manifests Vuls Scan API", "HTTP API")
 Rel_R(vuls_api, vuls_reports_dir, "Cache analyzed scans to filesystem", "System FS calls")
 Rel_R(vuls_repo, vuls_reports_dir, "Serve static assets for frontend and report data via API", "Golang DB and FS libraries")
-
 Rel(cve_db_api, vuls_api, "Respond with CVE data for query", "HTTP")
 Rel(exploit_db_api, vuls_api, "Respond with Exploit DB data for query", "HTTP")
 Rel(gost_db_api, vuls_api, "Respond with Security Tracker DB data for query", "HTTP")
 Rel(oval_db_api, vuls_api, "Respond with OVAL DB data for query", "HTTP")
-
 Rel(cve_db_api, cve_db, "Read DB for query data", "Golang DB and FS libraries")
 Rel(exploit_db_api, exploit_db, "Read DB for query data", "Golang DB and FS libraries")
 Rel(gost_db_api, gost_db, "Read DB for query data", "Golang DB and FS libraries")
 Rel(oval_db_api, oval_db, "Read DB for query data", "Golang DB and FS libraries")
-
-Lay_R(cve_db, exploit_db)
-Lay_R(exploit_db, gost_db)
-Lay_R(gost_db, oval_db)
+Rel_L(dev, vuls_repo, "Read scan reports", "Web browser via HTTP")
+Rel_L(cgeng, vuls_repo, "Read scan reports", "Web browser via HTTP")
+Rel_L(cgisso, vuls_repo, "Read scan reports", "Web browser via HTTP")
 @enduml
