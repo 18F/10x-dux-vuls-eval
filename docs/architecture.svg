@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="879px" preserveAspectRatio="none" style="width:3180px;height:879px;" version="1.1" viewBox="0 0 3180 879" width="3180px" zoomAndPan="magnify"><defs/><g><!--MD5=[91fd6c615e3469f8a2933a12b3b84b75]
+cluster cg--><rect fill="#FFFFFF" height="171" style="stroke: #444444; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="216" x="7" y="539"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="87" x="71.5" y="555.8516">Cloud.gov</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="62" x="84" y="570.7637">[System]</text><!--MD5=[53c6159a60c9822bcd8152bed18cf124]
+cluster vulsaws--><rect fill="#FFFFFF" height="737" style="stroke: #444444; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="2057" x="893" y="7"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="259" x="1792" y="23.8516">Vuls Prototype AWS Account</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="62" x="1890.5" y="38.7637">[System]</text><!--MD5=[6ecbfef9942bfa4b3252534f58f8c712]
+cluster gh--><rect fill="#FFFFFF" height="206" style="stroke: #444444; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" width="232" x="94" y="242"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="58" x="181" y="258.8516">Github</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="62" x="179" y="273.7637">[System]</text><!--MD5=[4541fb81c80c07473fe4b07432ef0971]
+entity app--><rect fill="#438DD5" height="85.1875" style="stroke: #3C7FC0; stroke-width: 1.5;" width="199" x="15.5" y="617"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="117" x="56.5" y="641.8516">App Instance</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="159" x="35.5" y="656.7637">[Javascript, Python, Shell]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="117" y="672.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="179" x="25.5" y="688.8857">App instance in Cloud.gov</text><!--MD5=[d3305cd517afb44b0307086561a307ba]
+entity vuls_repo--><rect fill="#438DD5" height="101.4844" style="stroke: #3C7FC0; stroke-width: 1.5;" width="216" x="1057" y="609"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="154" x="1088" y="633.8516">Vuls Reporting UI</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="162" x="1084" y="648.7637">[Golang, Javascript, HTML]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1167" y="664.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="177" x="1074.5" y="680.8857">An API serving report data</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="196" x="1067" y="697.1826">and visualizing reporting info</text><!--MD5=[5b69f22b0c4e7438bf861d7d11c4f710]
+entity vuls_api--><rect fill="#438DD5" height="117.7813" style="stroke: #3C7FC0; stroke-width: 1.5;" width="190" x="1812" y="600.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="121" x="1846.5" y="625.3516">Vuls Scan API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="1880" y="640.2637">[Golang]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1909" y="656.0889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="166" x="1822" y="672.3857">The API server exposing</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="161" x="1824.5" y="688.6826">health and scan upload</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="1872" y="704.9795">endpoints</text><!--MD5=[9c1ae4acb834d3f2ff2849be4f4b427c]
+entity vuls_reports_dir--><rect fill="#438DD5" height="152.7031" style="stroke: #3C7FC0; stroke-width: 1.5;" width="210" x="2227" y="583"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="155" x="2251.5" y="607.8516">Vuls file store for</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="67" x="2298.5" y="626.4766">reports</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="39" x="2312.5" y="641.3887">[JSON]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2334" y="657.2139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="158" x="2251" y="673.5107">A filesystem location to</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="133" x="2263.5" y="689.8076">cache scan reports</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="186" x="2237" y="706.1045">enhanced with vulnerability</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="54" x="2305" y="722.4014">analysis</text><!--MD5=[3b50c322177427c9a1f031652f4c60b7]
+entity cve_db_api--><rect fill="#438DD5" height="117.7813" style="stroke: #3C7FC0; stroke-width: 1.5;" width="220" x="2011" y="85"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="101" x="2070.5" y="109.8516">CVE DB API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="2094" y="124.7637">[Golang]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2123" y="140.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="189" x="2024.5" y="156.8857">Database to store 3rd party</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="196" x="2021" y="173.1826">vulnerability data and subset</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="155" x="2043.5" y="189.4795">of vulnerability analysis</text><!--MD5=[69af5d3aaafc7eaa57af556d48f5c389]
+entity cve_db--><path d="M2472.5,606 C2472.5,596 2580,596 2580,596 C2580,596 2687.5,596 2687.5,606 L2687.5,712.7813 C2687.5,722.7813 2580,722.7813 2580,722.7813 C2580,722.7813 2472.5,722.7813 2472.5,712.7813 L2472.5,606 " fill="#438DD5" style="stroke: #3C7FC0; stroke-width: 1.5;"/><path d="M2472.5,606 C2472.5,616 2580,616 2580,616 C2580,616 2687.5,616 2687.5,606 " fill="none" style="stroke: #3C7FC0; stroke-width: 1.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="2547.5" y="634.8516">CVE DB</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49" x="2555.5" y="649.7637">[SQLite]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2582" y="665.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="191" x="2482.5" y="681.8857">Stores a normalized version</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="175" x="2490.5" y="698.1826">of all business data for ad</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="163" x="2498.5" y="714.4795">hoc reporting purposes</text><!--MD5=[ee9644e690272c17478eb9bb0e39bebe]
+entity exploit_db_api--><rect fill="#438DD5" height="85.1875" style="stroke: #3C7FC0; stroke-width: 1.5;" width="145" x="2562.5" y="101.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="125" x="2572.5" y="126.3516">Exploit DB API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="2608" y="141.2637">[Golang]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2637" y="157.0889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="95" x="2587.5" y="173.3857">Exploit DB API</text><!--MD5=[3991d14ebd568b85ef87228cb37c91c6]
+entity exploit_db--><path d="M2722.5,614.5 C2722.5,604.5 2832,604.5 2832,604.5 C2832,604.5 2941.5,604.5 2941.5,614.5 L2941.5,704.9844 C2941.5,714.9844 2832,714.9844 2832,714.9844 C2832,714.9844 2722.5,714.9844 2722.5,704.9844 L2722.5,614.5 " fill="#438DD5" style="stroke: #3C7FC0; stroke-width: 1.5;"/><path d="M2722.5,614.5 C2722.5,624.5 2832,624.5 2832,624.5 C2832,624.5 2941.5,624.5 2941.5,614.5 " fill="none" style="stroke: #3C7FC0; stroke-width: 1.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="89" x="2787.5" y="643.3516">Exploit DB</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49" x="2807.5" y="658.2637">[SQLite]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2834" y="674.0889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="193" x="2733.5" y="690.3857">DB with exploit-db.com data</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="199" x="2732.5" y="706.6826">for Vuls to show PoC exploits</text><!--MD5=[9f819db887d0bac85a190ced792e745a]
+entity gost_db_api--><rect fill="#438DD5" height="85.1875" style="stroke: #3C7FC0; stroke-width: 1.5;" width="181" x="1505.5" y="101.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="116" x="1538" y="126.3516">GOST DB API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="1569" y="141.2637">[Golang]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1598" y="157.0889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="161" x="1515.5" y="173.3857">Security Tracker DB API</text><!--MD5=[d5f14d16c1ec47a0f65f1e035962ffd0]
+entity gost_db--><path d="M1557,606 C1557,596 1667,596 1667,596 C1667,596 1777,596 1777,606 L1777,712.7813 C1777,722.7813 1667,722.7813 1667,722.7813 C1667,722.7813 1557,722.7813 1557,712.7813 L1557,606 " fill="#438DD5" style="stroke: #3C7FC0; stroke-width: 1.5;"/><path d="M1557,606 C1557,616 1667,616 1667,616 C1667,616 1777,616 1777,606 " fill="none" style="stroke: #3C7FC0; stroke-width: 1.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="1627" y="634.8516">GOST DB</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49" x="1642.5" y="649.7637">[SQLite]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1669" y="665.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="200" x="1567" y="681.8857">Security Tracker DB, to cross</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="132" x="1599" y="698.1826">-ref CVEs and send</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1625.5" y="714.4795">notifications</text><!--MD5=[59cd84fca3c3d45658ce9ec88387cbe8]
+entity oval_db_api--><rect fill="#438DD5" height="85.1875" style="stroke: #3C7FC0; stroke-width: 1.5;" width="135" x="1029.5" y="101.5"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="115" x="1039.5" y="126.3516">OVAL DB API</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="54" x="1070" y="141.2637">[Golang]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1099" y="157.0889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="1054" y="173.3857">OVAL DB API</text><!--MD5=[2f368549c94750eba5afe6dd5e80a0f0]
+entity oval_db--><path d="M1308.5,598 C1308.5,588 1415,588 1415,588 C1415,588 1521.5,588 1521.5,598 L1521.5,721.0781 C1521.5,731.0781 1415,731.0781 1415,731.0781 C1415,731.0781 1308.5,731.0781 1308.5,721.0781 L1308.5,598 " fill="#438DD5" style="stroke: #3C7FC0; stroke-width: 1.5;"/><path d="M1308.5,598 C1308.5,608 1415,608 1415,608 C1415,608 1521.5,608 1521.5,598 " fill="none" style="stroke: #3C7FC0; stroke-width: 1.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="1375.5" y="626.8516">OVAL DB</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="49" x="1390.5" y="641.7637">[SQLite]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="1417" y="657.5889"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="189" x="1318.5" y="673.8857">DB for OVAL data for Alpine,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="169" x="1328.5" y="690.1826">Amazon, Debian, Oracle,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="185" x="1320.5" y="706.4795">RedHat, SUSE, and Ubuntu</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="1397.5" y="722.7764">Linux</text><!--MD5=[951a3d4b723ca16b5017eaaac0b8b254]
+entity vuls_cf_buildpack--><rect fill="#438DD5" height="120.1094" style="stroke: #3C7FC0; stroke-width: 1.5;" width="216" x="102" y="320"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="164" x="125" y="344.8516">Vuls CloudFoundry</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="84" x="168" y="363.4766">Buildpack</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="40" x="190" y="378.3887">[Shell]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="212" y="394.2139"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="192" x="112" y="410.5107">Repo for Vuls CloudFoundry</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="176.5" y="426.8076">Buildpack</text><!--MD5=[3d99d59a27ec55cd9b0b1490801f78bc]
+entity dev--><rect fill="#08427B" height="38.625" style="stroke: #073B6F; stroke-width: 1.5;" width="212" x="436" y="640"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="192" x="446" y="664.8516">Application Developer</text><!--MD5=[697aec1a7cb4763e2e78387688ecfa38]
+entity cgeng--><rect fill="#08427B" height="38.625" style="stroke: #073B6F; stroke-width: 1.5;" width="190" x="683" y="640"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="170" x="693" y="664.8516">Cloud.gov Engineer</text><!--MD5=[413e2e2dc40b32cd01965d68a643c2e8]
+entity cgisso--><rect fill="#08427B" height="57.25" style="stroke: #073B6F; stroke-width: 1.5;" width="192" x="2977" y="631"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="166" x="2987" y="655.8516">Cloud.gov Security</text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="56" x="3045" y="674.4766">Offical</text><!--MD5=[5f1acf40d51205d85bc1529d0ebce6be]
+reverse link app to dev--><path d="M219.6721,659.5 C285.4044,659.5 369.9227,659.5 435.9206,659.5 " fill="none" id="app&lt;-dev" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="214.5736,659.5,223.5736,663.5,219.5736,659.5,223.5736,655.5,214.5736,659.5" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="180" x="232.75" y="623.5669">Deploy app instances to</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="72" x="289.25" y="638.6997">cloud.gov</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="151" x="249.75" y="652.9043">[CloudFoundry CLI tools]</text><!--MD5=[b86c2bd67eb4ae4fe0c68dbe9d1fdcce]
+reverse link vuls_cf_buildpack to cgeng--><path d="M322.8687,403.1495 C419.5896,426.6277 559.7038,469.5522 666,539 C708.0822,566.4941 745.2388,613.1389 764.3522,639.6069 " fill="none" id="vuls_cf_buildpack&lt;-cgeng" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="318.0077,401.9771,325.8188,407.976,322.8683,403.1495,327.6947,400.199,318.0077,401.9771" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="144" x="644" y="483.0669">Cloud.gov engineer</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="130" x="651" y="498.1997">adapts buildpack</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="85" x="676" y="513.3325">accordingly</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="91" x="673" y="527.5371">[Git via HTTPS]</text><!--MD5=[5a0d472f0041892370289856aa9e23be]
+link vuls_cf_buildpack to app--><path d="M189.5034,440.3032 C172.0482,491.6581 147.308,564.4464 131.2082,611.8138 " fill="none" id="vuls_cf_buildpack-&gt;app" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="129.5806,616.6022,136.2642,609.3683,131.1897,611.8682,128.6899,606.7937,129.5806,616.6022" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="139" x="181" y="490.5669">Retrieve buildpack</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="221" y="505.6997">contents</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="91" x="207.5" y="519.9043">[Git via HTTPS]</text><!--MD5=[c48ec5866b36923c8492c9369feea7df]
+link app to vuls_api--><path d="M200.0762,616.9331 C259.7477,589.3058 342.2619,555.4829 419,539 C568.4795,506.8927 1656.5219,474.2016 1795,539 C1822.0322,551.6492 1845.6571,574.0493 1864.1523,596.1323 " fill="none" id="app-&gt;vuls_api" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1867.5457,600.2496,1864.9084,590.7604,1864.3657,596.3912,1858.7349,595.8484,1867.5457,600.2496" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="147" x="1077" y="490.5669">Send OS and library</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="178" x="1064" y="505.6997">manifests Vuls Scan API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="64" x="1121" y="519.9043">[HTTP API]</text><!--MD5=[a31a8b67443c0e0d9a7ad306c8f1780b]
+link vuls_api to vuls_reports_dir--><path d="M2002.1137,659.5 C2067.0985,659.5 2153.4266,659.5 2221.471,659.5 " fill="none" id="vuls_api-&gt;vuls_reports_dir" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="2226.7511,659.5,2217.7511,655.5,2221.7511,659.5,2217.7511,663.5,2226.7511,659.5" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="183" x="2020.5" y="623.5669">Cache analyzed scans to</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="76" x="2076.5" y="638.6997">filesystem</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="106" x="2061.5" y="652.9043">[System FS calls]</text><!--MD5=[14bc1019253e54ece2968fefd23992d1]
+link vuls_repo to vuls_reports_dir--><path d="M1184.3161,608.9839 C1201.4674,571.9595 1230.4666,524.4068 1273,502 C1362.8876,454.6467 1657.4506,458.8063 2020,539 C2089.2076,554.3083 2163.353,582.4153 2221.9919,607.6349 " fill="none" id="vuls_repo-&gt;vuls_reports_dir" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="2226.9001,609.7547,2220.2236,602.5142,2222.3099,607.7723,2217.0518,609.8586,2226.9001,609.7547" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="166" x="1284.5" y="483.0669">Serve static assets for</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="187" x="1274" y="498.1997">frontend and report data</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="50" x="1345" y="513.3325">via API</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="176" x="1282" y="527.5371">[Golang DB and FS libraries]</text><!--MD5=[8b4a0cf56c81410fba6cc86c2bf7e19a]
+link cve_db_api to vuls_api--><path d="M2043.2188,203.1493 C2031.4237,214.9522 2020.4075,228.0515 2012,242 C2002.7927,257.2756 1948.9231,481.9571 1922.1256,595.2204 " fill="none" id="cve_db_api-&gt;vuls_api" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1920.9486,600.1968,1926.9128,592.3591,1922.0995,595.3311,1919.1276,590.5178,1920.9486,600.1968" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="200" x="2013" y="370.0669">Respond with CVE data for</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="2092" y="385.1997">query</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="41" x="2092.5" y="399.4043">[HTTP]</text><!--MD5=[d1efcb0fb2e9e137efc4ada7c8518050]
+link exploit_db_api to vuls_api--><path d="M2562.2351,184.4676 C2540.7269,199.8178 2519.171,219.1933 2505,242 C2455.8215,321.1476 2526.6105,377.2241 2466,448 C2387.4561,539.7169 2323.0107,496.4591 2210,539 C2141.9762,564.6064 2065.9707,594.8374 2007.0995,618.6135 " fill="none" id="exploit_db_api-&gt;vuls_api" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="2002.1757,620.6032,2012.0188,620.9397,2006.8115,618.7298,2009.0214,613.5225,2002.1757,620.6032" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="182" x="2506" y="370.0669">Respond with Exploit DB</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="107" x="2546" y="385.1997">data for query</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="41" x="2579" y="399.4043">[HTTP]</text><!--MD5=[70f7b4f5a5e10d104fc43106c6d6af4a]
+link gost_db_api to vuls_api--><path d="M1640.0143,186.9025 C1654.6736,203.0665 1670.0409,222.3242 1681,242 C1746.4612,359.5279 1676.8227,434.9344 1771,531 C1778.8712,539.029 1785.5452,532.9151 1795,539 C1818.8535,554.3515 1841.0561,575.9284 1859.2985,596.5897 " fill="none" id="gost_db_api-&gt;vuls_api" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1862.6582,600.4352,1859.7491,591.0258,1859.3685,596.6698,1853.7245,596.2893,1862.6582,600.4352" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="165" x="1733.5" y="370.0669">Respond with Security</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="193" x="1722" y="385.1997">Tracker DB data for query</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="41" x="1798" y="399.4043">[HTTP]</text><!--MD5=[3c2a6abe8c7da9e46c956de2fd252337]
+link oval_db_api to vuls_api--><path d="M1136.8518,186.929 C1150.4112,203.2434 1164.7206,222.5916 1175,242 C1178.9353,249.4302 1258.266,525.9653 1265,531 C1288.5848,548.6332 1768.0938,527.0322 1795,539 C1822.6292,551.2894 1846.5619,574.0243 1865.1298,596.4629 " fill="none" id="oval_db_api-&gt;vuls_api" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1868.2981,600.3521,1865.715,590.848,1865.1401,596.4756,1859.5126,595.9007,1868.2981,600.3521" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="171" x="1237" y="370.0669">Respond with OVAL DB</text><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="107" x="1271.5" y="385.1997">data for query</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="41" x="1304.5" y="399.4043">[HTTP]</text><!--MD5=[2e0874f75424df7251ac873ca8c20fbe]
+link cve_db_api to cve_db--><path d="M2188.1943,203.2215 C2199.2332,215.2354 2209.7449,228.3883 2218,242 C2267.854,324.2037 2222.3668,374.2151 2284,448 C2339.1914,514.0731 2385.3373,488.4148 2455,539 C2476.4944,554.6081 2498.0029,573.7496 2516.9688,592.1423 " fill="none" id="cve_db_api-&gt;cve_db" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="2520.7273,595.8096,2517.0791,586.6613,2517.1486,592.3178,2511.4922,592.3872,2520.7273,595.8096" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="176" x="2285" y="377.5669">Read DB for query data</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="176" x="2285" y="391.7715">[Golang DB and FS libraries]</text><!--MD5=[290db392fb50f6764c442460254da183]
+link exploit_db_api to exploit_db--><path d="M2668.2793,186.6973 C2680.0993,203.2958 2692.7516,222.8921 2702,242 C2760.5314,362.9304 2800.2641,516.1862 2819.2171,599.2806 " fill="none" id="exploit_db_api-&gt;exploit_db" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="2820.325,604.1621,2822.2337,594.5,2819.2183,599.2861,2814.4321,596.2707,2820.325,604.1621" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="176" x="2779" y="377.5669">Read DB for query data</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="176" x="2779" y="391.7715">[Golang DB and FS libraries]</text><!--MD5=[42f1eb10a53470b25a94243aa642536c]
+link gost_db_api to gost_db--><path d="M1539.4224,186.5723 C1523.2368,202.0488 1507.649,220.967 1499,242 C1464.1802,326.6759 1468.8444,361.5531 1499,448 C1518.0772,502.6884 1557.8542,553.8394 1593.9155,592.1356 " fill="none" id="gost_db_api-&gt;gost_db" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1597.3929,595.8012,1594.1009,586.5188,1593.9518,592.1737,1588.2969,592.0245,1597.3929,595.8012" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="176" x="1500" y="377.5669">Read DB for query data</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="176" x="1500" y="391.7715">[Golang DB and FS libraries]</text><!--MD5=[db81d641ebddef0ea38af1f3388b48d4]
+link oval_db_api to oval_db--><path d="M1046.7922,186.7287 C961.563,264.1408 807.1013,428.9984 907,531 C921.9303,546.2445 1271.313,530.7701 1291,539 C1315.0174,549.0401 1336.992,566.1053 1355.5518,584.2841 " fill="none" id="oval_db_api-&gt;oval_db" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1359.2179,587.9329,1355.6608,578.7488,1355.6741,584.4057,1350.0173,584.4189,1359.2179,587.9329" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="176" x="990" y="377.5669">Read DB for query data</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="176" x="990" y="391.7715">[Golang DB and FS libraries]</text><!--MD5=[f63050ae9badbfa9d20acb6ab0546576]
+reverse link vuls_repo to dev--><path d="M1139.3473,604.0892 C1121.3552,572.2941 1093.9834,535.1779 1057.5,517 C979.5076,478.1402 745.1765,502.6133 666,539 C616.9035,561.563 575.5452,611.9701 555.3159,639.9108 " fill="none" id="vuls_repo&lt;-dev" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1141.9338,608.7388,1141.0541,598.9293,1139.5031,604.3694,1134.063,602.8184,1141.9338,608.7388" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="136" x="915" y="498.0669">Read scan reports</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="147" x="909.5" y="512.2715">[Web browser via HTTP]</text><!--MD5=[8fa5ee16427484b2dc1a05b8de9d5b05]
+reverse link vuls_repo to cgeng--><path d="M1051.76,659.5 C995.0461,659.5 927.1522,659.5 873.1665,659.5 " fill="none" id="vuls_repo&lt;-cgeng" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1056.8638,659.5,1047.8638,655.5,1051.8638,659.5,1047.8638,663.5,1056.8638,659.5" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="136" x="897" y="638.5669">Read scan reports</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="147" x="891.5" y="652.7715">[Web browser via HTTP]</text><!--MD5=[92f94f49750ebb75a09e9c6b603ee48d]
+reverse link vuls_repo to cgisso--><path d="M1206.3735,604.8557 C1228.4998,580.0378 1257.9785,553.1209 1291,539 C1490.4189,453.7231 1561.668,521.8901 1778.5,517 C2214.8337,507.1595 2873.2913,501.6735 2958,539 C3001.1347,558.0071 3035.9623,601.6618 3055.5741,630.8713 " fill="none" id="vuls_repo&lt;-cgisso" style="stroke: #666666; stroke-width: 1.0;"/><polygon fill="#666666" points="1202.8861,608.8186,1211.8348,604.7051,1206.1894,605.0652,1205.8293,599.4198,1202.8861,608.8186" style="stroke: #666666; stroke-width: 1.0;"/><text fill="#666666" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="136" x="1785" y="498.0669">Read scan reports</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="147" x="1779.5" y="512.2715">[Web browser via HTTP]</text><rect fill="#DDDDDD" height="111.7813" rx="5" ry="5" style="stroke: #000000; stroke-width: 1.0;" width="199" x="2954" y="757"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="3030" y="776.9951"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="39" x="3035" y="776.9951">Type</text><rect fill="#08427B" height="16.2969" style="stroke: none; stroke-width: 1.0;" width="70" x="2960" y="780.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2984" y="793.292"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="3034" y="793.292">person</text><rect fill="#686868" height="16.2969" style="stroke: none; stroke-width: 1.0;" width="70" x="2960" y="796.5938"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2984" y="809.5889"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="3034" y="809.5889">external person</text><rect fill="#1168BD" height="16.2969" style="stroke: none; stroke-width: 1.0;" width="70" x="2960" y="812.8906"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2972" y="825.8857"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="3034" y="825.8857">system</text><rect fill="#999999" height="16.2969" style="stroke: none; stroke-width: 1.0;" width="70" x="2960" y="829.1875"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2984" y="842.1826"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="109" x="3034" y="842.1826">external system</text><rect fill="#438DD5" height="16.2969" style="stroke: none; stroke-width: 1.0;" width="70" x="2960" y="845.4844"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="2972" y="858.4795"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="3034" y="858.4795">container</text><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="764" y2="764"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="780.2969" y2="780.2969"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="796.5938" y2="796.5938"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="812.8906" y2="812.8906"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="829.1875" y2="829.1875"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="845.4844" y2="845.4844"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="3147" y1="861.7813" y2="861.7813"/><line style="stroke: #000000; stroke-width: 1.0;" x1="2960" x2="2960" y1="764" y2="861.7813"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3030" x2="3030" y1="764" y2="861.7813"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3147" x2="3147" y1="764" y2="861.7813"/><!--MD5=[7238722b4babdb35608f51016afa8976]
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 200
+
+LAYOUT_TOP_DOWN
+LAYOUT_WITH_LEGEND()
+
+Person(dev, "Application Developer")
+
+Person(cgeng, "Cloud.gov Engineer")
+
+Person(cgisso, "Cloud.gov Security Offical")
+
+System_Boundary(cg, "Cloud.gov") {
+
+    Container(app, "App Instance", "Javascript, Python, Shell", "App instance in Cloud.gov")
+
+}
+
+System_Boundary(vulsaws, "Vuls Prototype AWS Account") {
+
+    Container(vuls_repo, "Vuls Reporting UI", "Golang, Javascript, HTML", "An API serving report data and visualizing reporting info")
+
+    Container(vuls_api, "Vuls Scan API", "Golang", "The API server exposing health and scan upload endpoints")
+
+    Container(vuls_reports_dir, "Vuls file store for reports", "JSON", "A filesystem location to cache scan reports enhanced with vulnerability analysis")
+
+    Container(cve_db_api, "CVE DB API", "Golang", "Database to store 3rd party vulnerability data and subset of vulnerability analysis")
+
+    ContainerDb(cve_db, "CVE DB", "SQLite", "Stores a normalized version of all business data for ad hoc reporting purposes")
+
+    Container(exploit_db_api, "Exploit DB API", "Golang", "Exploit DB API")
+
+    ContainerDb(exploit_db, "Exploit DB", "SQLite", "DB with exploit-db.com data for Vuls to show PoC exploits")
+
+    Container(gost_db_api, "GOST DB API", "Golang", "Security Tracker DB API")
+
+    ContainerDb(gost_db, "GOST DB", "SQLite", "Security Tracker DB, to cross-ref CVEs and send notifications")
+
+    Container(oval_db_api, "OVAL DB API", "Golang", "OVAL DB API")
+
+    ContainerDb(oval_db, "OVAL DB", "SQLite", "DB for OVAL data for Alpine, Amazon, Debian, Oracle, RedHat, SUSE, and Ubuntu Linux")
+}
+
+System_Boundary(gh, "Github") {
+    Container(vuls_cf_buildpack, "Vuls CloudFoundry Buildpack", "Shell", "Repo for Vuls CloudFoundry Buildpack")
+}
+
+Rel_L(dev, app, "Deploy app instances to cloud.gov", "CloudFoundry CLI tools")
+Rel_L(cgeng, vuls_cf_buildpack, "Cloud.gov engineer adapts buildpack accordingly", "Git via HTTPS")
+Rel(vuls_cf_buildpack, app, "Retrieve buildpack contents", "Git via HTTPS")
+Rel_R(app, vuls_api, "Send OS and library manifests Vuls Scan API", "HTTP API")
+Rel_R(vuls_api, vuls_reports_dir, "Cache analyzed scans to filesystem", "System FS calls")
+Rel_R(vuls_repo, vuls_reports_dir, "Serve static assets for frontend and report data via API", "Golang DB and FS libraries")
+Rel(cve_db_api, vuls_api, "Respond with CVE data for query", "HTTP")
+Rel(exploit_db_api, vuls_api, "Respond with Exploit DB data for query", "HTTP")
+Rel(gost_db_api, vuls_api, "Respond with Security Tracker DB data for query", "HTTP")
+Rel(oval_db_api, vuls_api, "Respond with OVAL DB data for query", "HTTP")
+Rel(cve_db_api, cve_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(exploit_db_api, exploit_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(gost_db_api, gost_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel(oval_db_api, oval_db, "Read DB for query data", "Golang DB and FS libraries")
+Rel_L(dev, vuls_repo, "Read scan reports", "Web browser via HTTP")
+Rel_L(cgeng, vuls_repo, "Read scan reports", "Web browser via HTTP")
+Rel_L(cgisso, vuls_repo, "Read scan reports", "Web browser via HTTP")
+@enduml
+
+@startuml
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+
+
+
+
+
+
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 200
+
+top to bottom direction
+hide stereotype
+legend right
+|=              |= Type |
+|<#08427B>      | person |
+|<#686868>      | external person |
+|<#1168BD>   | system |
+|<#999999>      | external system |
+|<#438DD5>   | container |
+endlegend
+
+rectangle "==Application Developer" <<person>> as dev
+
+rectangle "==Cloud.gov Engineer" <<person>> as cgeng
+
+rectangle "==Cloud.gov Security Offical" <<person>> as cgisso
+
+rectangle "==Cloud.gov\n<size:12>[System]</size>" <<boundary>> as cg {
+
+    rectangle "==App Instance\n//<size:12>[Javascript, Python, Shell]</size>//\n\n App instance in Cloud.gov" <<container>> as app
+
+}
+
+rectangle "==Vuls Prototype AWS Account\n<size:12>[System]</size>" <<boundary>> as vulsaws {
+
+    rectangle "==Vuls Reporting UI\n//<size:12>[Golang, Javascript, HTML]</size>//\n\n An API serving report data and visualizing reporting info" <<container>> as vuls_repo
+
+    rectangle "==Vuls Scan API\n//<size:12>[Golang]</size>//\n\n The API server exposing health and scan upload endpoints" <<container>> as vuls_api
+
+    rectangle "==Vuls file store for reports\n//<size:12>[JSON]</size>//\n\n A filesystem location to cache scan reports enhanced with vulnerability analysis" <<container>> as vuls_reports_dir
+
+    rectangle "==CVE DB API\n//<size:12>[Golang]</size>//\n\n Database to store 3rd party vulnerability data and subset of vulnerability analysis" <<container>> as cve_db_api
+
+    database "==CVE DB\n//<size:12>[SQLite]</size>//\n\n Stores a normalized version of all business data for ad hoc reporting purposes" <<container>> as cve_db
+
+    rectangle "==Exploit DB API\n//<size:12>[Golang]</size>//\n\n Exploit DB API" <<container>> as exploit_db_api
+
+    database "==Exploit DB\n//<size:12>[SQLite]</size>//\n\n DB with exploit-db.com data for Vuls to show PoC exploits" <<container>> as exploit_db
+
+    rectangle "==GOST DB API\n//<size:12>[Golang]</size>//\n\n Security Tracker DB API" <<container>> as gost_db_api
+
+    database "==GOST DB\n//<size:12>[SQLite]</size>//\n\n Security Tracker DB, to cross-ref CVEs and send notifications" <<container>> as gost_db
+
+    rectangle "==OVAL DB API\n//<size:12>[Golang]</size>//\n\n OVAL DB API" <<container>> as oval_db_api
+
+    database "==OVAL DB\n//<size:12>[SQLite]</size>//\n\n DB for OVAL data for Alpine, Amazon, Debian, Oracle, RedHat, SUSE, and Ubuntu Linux" <<container>> as oval_db
+}
+
+rectangle "==Github\n<size:12>[System]</size>" <<boundary>> as gh {
+    rectangle "==Vuls CloudFoundry Buildpack\n//<size:12>[Shell]</size>//\n\n Repo for Vuls CloudFoundry Buildpack" <<container>> as vuls_cf_buildpack
+}
+
+dev -LEFT-> app : "===Deploy app instances to cloud.gov\n//<size:12>[CloudFoundry CLI tools]</size>//"
+cgeng -LEFT-> vuls_cf_buildpack : "===Cloud.gov engineer adapts buildpack accordingly\n//<size:12>[Git via HTTPS]</size>//"
+vuls_cf_buildpack - -> app : "===Retrieve buildpack contents\n//<size:12>[Git via HTTPS]</size>//"
+app -RIGHT-> vuls_api : "===Send OS and library manifests Vuls Scan API\n//<size:12>[HTTP API]</size>//"
+vuls_api -RIGHT-> vuls_reports_dir : "===Cache analyzed scans to filesystem\n//<size:12>[System FS calls]</size>//"
+vuls_repo -RIGHT-> vuls_reports_dir : "===Serve static assets for frontend and report data via API\n//<size:12>[Golang DB and FS libraries]</size>//"
+cve_db_api - -> vuls_api : "===Respond with CVE data for query\n//<size:12>[HTTP]</size>//"
+exploit_db_api - -> vuls_api : "===Respond with Exploit DB data for query\n//<size:12>[HTTP]</size>//"
+gost_db_api - -> vuls_api : "===Respond with Security Tracker DB data for query\n//<size:12>[HTTP]</size>//"
+oval_db_api - -> vuls_api : "===Respond with OVAL DB data for query\n//<size:12>[HTTP]</size>//"
+cve_db_api - -> cve_db : "===Read DB for query data\n//<size:12>[Golang DB and FS libraries]</size>//"
+exploit_db_api - -> exploit_db : "===Read DB for query data\n//<size:12>[Golang DB and FS libraries]</size>//"
+gost_db_api - -> gost_db : "===Read DB for query data\n//<size:12>[Golang DB and FS libraries]</size>//"
+oval_db_api - -> oval_db : "===Read DB for query data\n//<size:12>[Golang DB and FS libraries]</size>//"
+dev -LEFT-> vuls_repo : "===Read scan reports\n//<size:12>[Web browser via HTTP]</size>//"
+cgeng -LEFT-> vuls_repo : "===Read scan reports\n//<size:12>[Web browser via HTTP]</size>//"
+cgisso -LEFT-> vuls_repo : "===Read scan reports\n//<size:12>[Web browser via HTTP]</size>//"
+@enduml
+
+PlantUML version 1.2020.13(Sat Jun 13 12:26:38 UTC 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
