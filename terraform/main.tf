@@ -38,6 +38,10 @@ locals {
   USERDATA
   test_userdata          = <<-USERDATA
     ${local.base_userdata}
+    curl -L -o /tmp/vuls.tar.gz https://github.com/future-architect/vuls/releases/download/v${local.vuls_release}/vuls_${local.vuls_release}_linux_amd64.tar.gz
+    tar -C /usr/local/bin -xf /tmp/vuls.tar.gz vuls
+    chmod +x /usr/local/bin/vuls
+    rm /tmp/vuls.tar.gz
     su - ec2-user <<"__EOF__"
     aws s3 cp s3://10x-dux-dev-vuls-results/config.toml .
     git clone https://github.com/flexion/10x-dux-app
