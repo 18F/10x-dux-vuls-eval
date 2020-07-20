@@ -1,6 +1,6 @@
 locals {
   bucket                 = "${var.namespace}-${var.stage}-${var.name}-results"
-  vuls_release           = "0.9.6"
+  vuls_release           = "0.11.0"
   base_userdata          = <<-USERDATA
     #!/bin/bash
     cat <<"__EOF__" > /home/ec2-user/.ssh/config
