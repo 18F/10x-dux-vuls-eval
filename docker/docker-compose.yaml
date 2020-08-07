@@ -67,7 +67,7 @@ services:
       - "1326:1326"
 
   vulsrepo:
-      image: ishidaco/vulsrepo:latest
+      image: ohsh6o/vulsrepo:latest
       command:
         - vulsrepo-server
       volumes:
