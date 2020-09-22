@@ -1,4 +1,5 @@
 @startuml
+skinparam maxMessageSize 100
 actor "App Developer" as dev
 actor "Cloud.gov Engineer" as ceng
 actor "Portfolio Owner" as po
