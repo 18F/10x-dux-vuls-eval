@@ -51,7 +51,7 @@ locals {
 }
 
 module "iam_instance_profile" {
-  source = "./modules/iam/instance"
+  source = "./modules/aws/iam/instance"
 
   namespace = var.namespace
   stage     = var.stage
@@ -82,7 +82,7 @@ module "iam_instance_profile" {
 }
 
 module "bastion_asg" {
-  source = "./modules/asg"
+  source = "./modules/aws/asg"
 
   namespace = var.namespace
   stage     = var.stage
@@ -112,7 +112,7 @@ module "bastion_asg" {
 }
 
 module "test_asg" {
-  source = "./modules/asg"
+  source = "./modules/aws/asg"
 
   namespace = var.namespace
   stage     = var.stage
@@ -142,7 +142,7 @@ module "test_asg" {
 }
 
 module "report_server_asg" {
-  source = "./modules/asg"
+  source = "./modules/aws/asg"
 
   namespace = var.namespace
   stage     = var.stage
