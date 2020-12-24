@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+export PATH=/usr/local/bin:${PATH}
+
 echo Load go-cve-dictionary data ...
 
 for i in `seq 2002 $(date +"%Y")`; do \
