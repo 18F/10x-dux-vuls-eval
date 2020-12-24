@@ -4,29 +4,29 @@
       memory: 128m
       command: go-exploitdb server --bind=0.0.0.0 --port=8080
       docker:
-        image: ohsh6o/vuls-combined:0.0.2
+        image: ohsh6o/vuls-combined:0.0.3
 
     - name: 10x-dux-v-cvedb
       memory: 128m
       command: go-cve-dictionary fetchnvd -last2y --dbtype postgres --dbpath $DATABASE_URL
       docker:
-        image: ohsh6o/vuls-combined:0.0.2
+        image: ohsh6o/vuls-combined:0.0.3
 
     - name: 10x-dux-v-ovaldb
       memory: 128m
       command: goval-dictionary server --bind=0.0.0.0 --port=8080
       docker:
-        image: ohsh6o/vuls-combined:0.0.2
+        image: ohsh6o/vuls-combined:0.0.3
 
     - name: 10x-dux-v-gost
       memory: 128m
       command: gost server --bind=0.0.0.0 --port=8080
       docker:
-        image: ohsh6o/vuls-combined:0.0.2
+        image: ohsh6o/vuls-combined:0.0.3
 
 
     - name: 10x-dux-v-core
       memory: 128m
       command: server -debug -debug-sql -to-localfile -format-json -log-dir=/var/log -results-dir=/vuls/results -listen=0.0.0.0:5515 -cvedb-type=http -cvedb-url=http://cvedb:1323 -ovaldb-type=http -ovaldb-url=http://ovaldb:1324 -gostdb-type=http -gostdb-url=http://gostdb:1325 -exploitdb-type=http -exploitdb-url=http://exploitdb:1326
       docker: 
-        image: ohsh6o/vuls-combined:0.0.2
+        image: ohsh6o/vuls-combined:0.0.3
