@@ -4,7 +4,7 @@ export PATH=/usr/local/bin:${PATH}
 
 echo Load go-cve-dictionary data ...
 
-for i in `seq 2002 $(date +"%Y")`; do \
+for i in `seq 2016 $(date +"%Y")`; do \
     echo Starting year $i ...
     go-cve-dictionary fetchnvd ${@} -years $i; \
 done
