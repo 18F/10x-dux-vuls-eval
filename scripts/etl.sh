@@ -17,7 +17,7 @@ done
 echo Load go-cve-dictionary-data ...
 go-exploitdb ${@} fetch exploitdb
 
-for d in GOST_LINUX_DISTROS; do \
+for d in $GOST_LINUX_DISTROS; do \
     echo Load gost data for distro $d ...
     gost fetch ${@} $d; \
 done
