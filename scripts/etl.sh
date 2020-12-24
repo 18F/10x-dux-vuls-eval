@@ -11,7 +11,7 @@ export OVAL_UBUNTU_VERSIONS=${OVAL_UBUNTU_VERSIONS:-"16 18 20"}
 
 for y in `seq $NVD_START_YEAR $(date +"%Y")`; do \
     echo Load go-cve-dictionary data for year $y...
-    go-cve-dictionary fetchnvd -years $y ${@}; \
+    go-cve-dictionary fetchnvd ${@} -years $y; \
 done
 
 echo Load go-cve-dictionary-data ...
