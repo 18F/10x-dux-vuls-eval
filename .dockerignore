@@ -1,3 +1,6 @@
 # Ignore everything
 # Our Docker builds pull remotely built binaries.
 **
+
+# Except the ETL scripts of course!
+!scripts/**/*

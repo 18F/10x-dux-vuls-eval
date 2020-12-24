@@ -69,3 +69,5 @@ RUN which ${VULS_REPO}
 
 COPY --from=vulsui ${SRCDIR}/${VULSUI_REPO}-server ${DESTDIR}/${VULSUI_REPO}-server
 RUN which ${VULSUI_REPO}-server
+
+ADD ./scripts/etl.sh /usr/local/bin/etl
