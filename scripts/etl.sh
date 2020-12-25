@@ -18,14 +18,14 @@ done
 for s in $GO_EXPLOITDB_SOURCES; do \
     echo Load go-exploitdb data source $s ...
     # go-exploitdb does not support single hyphens, two required
-    args="${@//-/--}"
+    args="${@//-db/--db}"
     go-exploitdb fetch $args $s; \
 done
 
 for d in $GOST_LINUX_DISTROS; do \
     echo Load gost data for distro $d ...
     # gost does not support single hyphens, two required
-    args="${@//-/--}"
+    args="${@//-db/--db}"
     gost fetch $args $d; \
 done
 
