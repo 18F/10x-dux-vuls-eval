@@ -18,19 +18,18 @@ done
 for s in $GO_EXPLOITDB_SOURCES; do \
     echo Load go-exploitdb data source $s ...
     # go-exploitdb does not support single hyphens, two required
-    args="${@//-db/--db}"
-    go-exploitdb fetch $args $s; \
+    go-exploitdb fetch ${@//-db/--db} $s; \
 done
 
 for d in $GOST_LINUX_DISTROS; do \
     echo Load gost data for distro $d ...
     # gost does not support single hyphens, two required
-    args="${@//-db/--db}"
-    gost fetch $args $d; \
+    gost fetch ${@//-db/--db} $d; \
 done
 
 echo Load go-msfdb data ...
-go-msfdb fetch ${@} msfdb
+# go-msfdb does not support single hyphens, two required
+go-msfdb fetch ${@//-db/--db} msfdb
 
 echo Load goval-dictionary data for Alpine Linux $OVAL_ALPINE_VERSIONS ...
 goval-dictionary fetch-alpine ${@} $OVAL_ALPINE_VERSIONS
