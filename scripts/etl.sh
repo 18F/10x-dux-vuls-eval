@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 export PATH=/usr/local/bin:${PATH}
-export NVD_START_YEAR=${NVD_START_YEAR:-2002}
+export NVD_YEARS=${NVD_YEARS:-"$(seq 2002 $(date +"%Y"))"}
+export GO_EXPLOITDB_SOURCES="exploitdb"
 export GOST_LINUX_DISTROS="debian redhat"
 export OVAL_ALPINE_VERSIONS=${OVAL_ALPINE_VERSIONS:-"3.3 3.4 3.5 3.6 3.7 3.8 3.9 3.10"}
 export OVAL_AMAZON_VERSIONS=${OVAL_AMAZON_VERSIONS:-""}
@@ -9,21 +10,27 @@ export OVAL_DEBIAN_VERSIONS=${OVAL_DEBIAN_VERSIONS:-"8 9 10"}
 export OVAL_REDHAT_VERSIONS=${OVAL_REDHAT_VERSIONS:-"6 7 8"}
 export OVAL_UBUNTU_VERSIONS=${OVAL_UBUNTU_VERSIONS:-"16 18 20"}
 
-for y in `seq $NVD_START_YEAR $(date +"%Y")`; do \
-    echo Load go-cve-dictionary data for year $y...
+for y in $NVD_YEARS; do \
+    echo Load go-cve-dictionary data for year $y ...
     go-cve-dictionary fetchnvd ${@} -years $y; \
 done
 
-echo Load go-cve-dictionary-data ...
-go-exploitdb ${@} fetch exploitdb
+for s in $GO_EXPLOITDB_SOURCES; do \
+    echo Load go-exploitdb data source $s ...
+    # go-exploitdb does not support single hyphens, two required
+    args="${@//-/--}"
+    go-exploitdb fetch $args $s; \
+done
 
 for d in $GOST_LINUX_DISTROS; do \
     echo Load gost data for distro $d ...
-    gost fetch ${@} $d; \
+    # gost does not support single hyphens, two required
+    args="${@//-/--}"
+    gost fetch $args $d; \
 done
 
 echo Load go-msfdb data ...
-go-msfdb ${@} fetch msfdb
+go-msfdb fetch ${@} msfdb
 
 echo Load goval-dictionary data for Alpine Linux $OVAL_ALPINE_VERSIONS ...
 goval-dictionary fetch-alpine ${@} $OVAL_ALPINE_VERSIONS
