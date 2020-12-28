@@ -3,7 +3,7 @@
     - name: 10x-dux-vuls-edb-((env))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: go-exploitdb server --bind=127.0.0.1 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
+      command: go-exploitdb server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
@@ -12,7 +12,7 @@
     - name: 10x-dux-vuls-cvedb-((env))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: go-cve-dictionary server --bind=127.0.0.1 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
+      command: go-cve-dictionary server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
@@ -21,7 +21,7 @@
     - name: 10x-dux-vuls-ovaldb-((env))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: goval-dictionary server --bind=127.0.0.1 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
+      command: goval-dictionary server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
@@ -30,7 +30,7 @@
     - name: 10x-dux-vuls-gost-((env))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: gost server server --bind=127.0.0.1 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
+      command: gost server server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
