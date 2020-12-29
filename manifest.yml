@@ -60,7 +60,7 @@
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: vuls server -debug -debug-sql -to-localfile -format-json -log-dir=/var/log -results-dir=/vuls/results -listen=0.0.0.0:5515"
+      command: curl -L -o ((config_local_path)) ((config_url)) && vuls server -debug -config ((config_local_path)) -to-localfile -format-json -log-dir=/var/log -results-dir=/var/tmp -listen=0.0.0.0:8080
       docker: 
         image: ohsh6o/vuls-combined:latest
       services:
