@@ -9,8 +9,7 @@
         image: ohsh6o/vuls-combined:latest
       services:
       - ((rds_instance))
-      routes:
-      -  route: ((app_name))-edb-((env)).apps.internal
+
 
     - name: ((app_name))-cve-((env))
       instances: ((default_instances))
@@ -21,8 +20,7 @@
         image: ohsh6o/vuls-combined:latest
       services:
       - ((rds_instance))
-      routes:
-      -  route: ((app_name))-cve-((env)).apps.internal
+
 
     - name: ((app_name))-oval-((env))
       instances: ((default_instances))
@@ -34,8 +32,7 @@
       instances: ((default_instances))
       services:
       - ((rds_instance))
-      routes:
-      -  route: ((app_name))-oval-((env)).apps.internal
+
 
     - name: ((app_name))-gost-((env))
       instances: ((default_instances))
@@ -46,8 +43,7 @@
         image: ohsh6o/vuls-combined:latest
       services:
       - ((rds_instance))
-      routes:
-      -  route: ((app_name))-gost-((env)).apps.internal
+
 
     - name: ((app_name))-msf-((env))
       instances: ((default_instances))
@@ -58,8 +54,7 @@
         image: ohsh6o/vuls-combined:latest
       services:
       - ((rds_instance))
-      routes:
-      -  route: ((app_name))-msf-((env)).apps.internal
+
 
     - name: ((app_name))-core-((env))
       instances: ((default_instances))
