@@ -18,7 +18,7 @@ ARG MSFDB_REPO=go-msfdb
 ARG MSFDB_VERSION=latest
 ARG VULS_OWNER=vuls
 ARG VULS_REPO=vuls
-ARG VULS_VERSION=0.14.0
+ARG VULS_VERSION=0.14.1
 ARG VULSUI_OWNER=vuls
 ARG VULSUI_REPO=vulsrepo
 ARG VULSUI_VERSION=latest
@@ -70,6 +70,6 @@ RUN which ${VULS_REPO}
 COPY --from=vulsui ${SRCDIR}/${VULSUI_REPO}-server ${DESTDIR}/${VULSUI_REPO}-server
 RUN which ${VULSUI_REPO}-server
 
-RUN apk add --no-cache git
+RUN apk add --no-cache curl git
 
 ADD ./scripts/etl.sh /usr/local/bin/etl
