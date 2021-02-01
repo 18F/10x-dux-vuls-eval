@@ -6,8 +6,7 @@
 
 #set -eo pipefail
 
-CMS_SERVICE=cms-service
-LOGIN_GOV_SERVICE=login-gov
+APP_SERVICE=cms-service
 TERRAFORM_SERVICE=terraform-user
 TERRAFORM_SERVICE_KEY=${TERRAFORM_SERVICE}-key
 TERRAFORM_STORAGE_SERVICE=terraform-storage
@@ -50,6 +49,12 @@ validate_parameters()
   fi
 
   if [ -z ${space_name+x} ]; then
+    printf "${RED}Please provide a space name.\n${NC}"
+    usage
+    exit 1
+  fi
+
+  if [ -z ${env+x} ]; then
     printf "${RED}Please provide a space name.\n${NC}"
     usage
     exit 1
@@ -115,55 +120,11 @@ setup() {
   export_environment
   aws s3api put-bucket-versioning --bucket ${BUCKET_NAME} --versioning-configuration Status=Enabled
 
-  if service_exists "${LOGIN_GOV_SERVICE}" ; then
-    echo space "${LOGIN_GOV_SERVICE}" already created
+  if service_exists "${APP_SERVICE}" ; then
+    echo space "${APP_SERVICE}" already created
   else
-    create_certs
-
-    cf create-user-provided-service "${LOGIN_GOV_SERVICE}" -p "{\"issuer\": \"${ISSUER}\", \"privateKey\": ${PRIVATE_KEY}, \"certificate\": ${CERTIFICATE}, \"accessUrl\": \"${ACCESS_URL}\"}"
+    cf create-user-provided-service "${APP_SERVICE}" -p "{\"adminJwtSecret\": \"${ADMIN_JWT_SECRET}\", \"jwtSecret\": \"${JWT_SECRET}\", \"sessionSecret1\": \"${SESSION_SECRET_1}\", \"sessionSecret2\": \"${SESSION_SECRET_2}\"}"
   fi
-
-  if service_exists "${CMS_SERVICE}" ; then
-    echo space "${CMS_SERVICE}" already created
-  else
-    create_cms_secrets
-    cf create-user-provided-service "${CMS_SERVICE}" -p "{\"adminJwtSecret\": \"${ADMIN_JWT_SECRET}\", \"jwtSecret\": \"${JWT_SECRET}\", \"sessionSecret1\": \"${SESSION_SECRET_1}\", \"sessionSecret2\": \"${SESSION_SECRET_2}\"}"
-  fi
-}
-
-create_certs() {
-  openssl req \
-          -newkey rsa:2048 \
-          -new \
-          -nodes \
-          -x509 \
-          -days 730 \
-          -subj "/C=US/O=General Services Administration/OU=TTS/CN=gsa.gov" \
-          -keyout deployment/login-gov-${organization_name}-${space_name}-key.pem \
-          -out deployment/login-gov-${organization_name}-${space_name}-cert.pem
-
-  urn_suffix=""
-
-  if [ "${space_name}" = "prod" ] || [ "${space_name}" = "staging" ] || [ "${space_name}" = "dev" ]; then
-    urn_suffix="_$space_name"
-  fi
-
-  PRIVATE_KEY=`cat deployment/login-gov-${organization_name}-${space_name}-key.pem | jq -aRs`
-  CERTIFICATE=`cat deployment/login-gov-${organization_name}-${space_name}-cert.pem | jq -aRs`
-  ISSUER="urn:gov:gsa:openidconnect.profiles:sp:sso:gsa:ai_experience${urn_suffix}"
-  ACCESS_URL="https://idp.int.identitysandbox.gov/api/openid_connect/token"
-
-  if [ "${space_name}" = "prod" ]; then
-    # TODO: Need prod login.gov url
-    ACCESS_URL="https://idp.int.identitysandbox.gov/api/openid_connect/token"
-  fi
-}
-
-create_cms_secrets() {
-  ADMIN_JWT_SECRET=`openssl rand 128 | LC_ALL=C tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_{|}~' | head -c 32`
-  JWT_SECRET=`openssl rand 128 | LC_ALL=C tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_{|}~' | head -c 32`
-  SESSION_SECRET_1=`openssl rand 128 | LC_ALL=C tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_{|}~' | head -c 32`
-  SESSION_SECRET_2=`openssl rand 128 | LC_ALL=C tr -dc 'A-Za-z0-9!#$%&()*+,-./:;<=>?@[\]^_{|}~' | head -c 32`
 }
 
 setup_keys() {
@@ -202,14 +163,6 @@ update_keys() {
   fi
 }
 
-update_certs() {
-  cf update-user-provided-service "${LOGIN_GOV_SERVICE}" -p "{\"issuer\": \"${ISSUER}\", \"privateKey\": ${PRIVATE_KEY}, \"certificate\": ${CERTIFICATE}, \"accessUrl\": \"${ACCESS_URL}\"}"
-}
-
-update_cms_secrets() {
-  cf update-user-provided-service "${CMS_SERVICE}" -p "{\"adminJwtSecret\": \"${ADMIN_JWT_SECRET}\", \"jwtSecret\": \"${JWT_SECRET}\", \"sessionSecret1\": \"${SESSION_SECRET_1}\", \"sessionSecret2\": \"${SESSION_SECRET_2}\"}"
-}
-
 print_service_key() {
   cf service-key terraform-user ${TERRAFORM_SERVICE_KEY}
 }
@@ -232,21 +185,14 @@ show() {
 
 deploy() {
   export_environment
-  terraform apply deployment/workspaces/${space_name}
+  #terraform apply deployment/workspaces/${space_name}
 }
 
 rotate() {
   update_keys
 
-  mv -v deployment/login-gov-${organization_name}-${space_name}-key.pem deployment/login-gov-${organization_name}-${space_name}-key.pem.old
-  mv -v deployment/login-gov-${organization_name}-${space_name}-cert.pem deployment/login-gov-${organization_name}-${space_name}-cert.pem.old
-
-  create_certs
-  update_certs
-  create_cms_secrets
-  update_cms_secrets
   echo "Forcing redeploy of CMS"
-  cf restage strapi-api-host
+  #cf restage strapi-api-host
   cat << EOF
 
 
@@ -269,6 +215,9 @@ while [ "$1" != "" ]; do
                                 ;;
     -s | --space )              shift
                                 space_name=$1
+                                ;;
+    -e | --environment )              shift
+                                environment=$1
                                 ;;
     -h | --help )               usage
                                 exit
