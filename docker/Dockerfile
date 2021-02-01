@@ -70,6 +70,8 @@ RUN which ${VULS_REPO}
 COPY --from=vulsui ${SRCDIR}/${VULSUI_REPO}-server ${DESTDIR}/${VULSUI_REPO}-server
 RUN which ${VULSUI_REPO}-server
 
-RUN apk add --no-cache curl git
+RUN apk add --no-cache curl git groff less postgresql-client python3 py-pip  \
+    && pip install awscli
+
 
 ADD ./scripts/etl.sh /usr/local/bin/etl
