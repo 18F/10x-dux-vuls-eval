@@ -1,0 +1,11 @@
+---
+    applications:
+    - name: ((app_name))-db-bootstrap-((environment_name))
+      memory: ((default_memory))
+      disk: ((default_disk))
+      command: sleep infinty
+      docker:
+        image: ohsh6o/vuls-combined:latest
+      services:
+      - ((app_name))-data-((environment_name))
+      - ((app_name))-db-((environment_name))
