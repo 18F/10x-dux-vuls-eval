@@ -203,8 +203,8 @@ deploy() {
             "/usr/local/bin/s3restore" \
             --name ${app_name}-db-${environment_name}-backup-$(date '+%Y%m%d%H%M%S')
 
-  echo Waiting for 5 minutes
-  #sleep 120
+  echo Waiting for 120 seconds until restore is complete
+  sleep 120
 
   config_data=$(jinja2 docker/vuls/config.toml -D app_name=${app_name} -D environment_name=${environment_name} | base64)
 
