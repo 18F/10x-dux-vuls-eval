@@ -1,16 +1,16 @@
 #!/bin/bash
 #
 # This script will bootstrap the creation of a cloud.gov deployment
-# environment, to be managed via Terraform.
+# environment.
 #
 
-#set -eo pipefail
+set -eo pipefail
 
-APP_SERVICE=cms-service
-TERRAFORM_SERVICE=terraform-user
-TERRAFORM_SERVICE_KEY=${TERRAFORM_SERVICE}-key
-TERRAFORM_STORAGE_SERVICE=terraform-storage
-TERRAFORM_STORAGE_SERVICE_KEY=${TERRAFORM_STORAGE_SERVICE}-key
+APP_DB_SERVICE=db
+APP_DB_SERVICE_KEY=${APP_DB_SERVICE}-service-key
+RDSTYPE=shared-psql
+APP_STORAGE_SERVICE=data
+APP_STORAGE_SERVICE_KEY=${APP_STORAGE_SERVICE}-service-key
 S3BUCKETTYPE=basic
 
 usage()
@@ -30,6 +30,8 @@ OPERATION:
 Options:
   -o, --organization organization_name   Cloud.gov organization name
   -s, --space space_name                 Cloud.gov space name
+  -e, --environment environment_name     Cloud.gov app and service instance suffix
+  -a, --application app_name             Cloud.gov application name
   -h                                     Print usage
 EOF
 }
@@ -54,8 +56,14 @@ validate_parameters()
     exit 1
   fi
 
-  if [ -z ${env+x} ]; then
-    printf "${RED}Please provide a space name.\n${NC}"
+  if [ -z ${environment_name+x} ]; then
+    printf "${RED}Please provide an environment name.\n${NC}"
+    usage
+    exit 1
+  fi
+
+  if [ -z ${app_name+x} ]; then
+    printf "${RED}Please provide an app name.\n${NC}"
     usage
     exit 1
   fi
@@ -73,26 +81,25 @@ service_key_exists() {
   cf service-key "$1" "$2" >/dev/null 2>&1
 }
 
-export_terraform_storage_key() {
-  echo "Querying for ${TERRAFORM_STORAGE_SERVICE}..."
-  TERRAFORM_STORAGE_SERVICE_KEY=$(cf service-key ${TERRAFORM_STORAGE_SERVICE} ${TERRAFORM_STORAGE_SERVICE_KEY} | tail -n +2)
-  echo "Exporting ${TERRAFORM_STORAGE_SERVICE} S3 AWS credentials..."
-  export AWS_ACCESS_KEY_ID=$(echo $TERRAFORM_STORAGE_SERVICE_KEY | jq -r .access_key_id)
-  export AWS_SECRET_ACCESS_KEY=$(echo $TERRAFORM_STORAGE_SERVICE_KEY | jq -r .secret_access_key)
-  export AWS_DEFAULT_REGION=$(echo $TERRAFORM_STORAGE_SERVICE_KEY | jq -r .region)
-  export BUCKET_NAME=$(echo $TERRAFORM_STORAGE_SERVICE_KEY | jq -r .bucket)
+export_app_storage_key() {
+  echo "Querying for ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} ..."
+  SKEY=$(cf service-key ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name} | tail -n +2)
+  echo "Exporting ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} S3 AWS credentials..."
+  export AWS_ACCESS_KEY_ID=$(echo $SKEY | jq -r .access_key_id)
+  export AWS_SECRET_ACCESS_KEY=$(echo $SKEY | jq -r .secret_access_key)
+  export AWS_DEFAULT_REGION=$(echo $SKEY | jq -r .region)
+  export BUCKET_NAME=$(echo $SKEY | jq -r .bucket)
 }
 
 export_service_key() {
-  echo "Querying for ${TERRAFORM_SERVICE_KEY}..."
-  SERVICE_KEY=$(cf service-key terraform-user ${TERRAFORM_SERVICE_KEY} | tail -n +2)
-  echo "Exporting ${TERRAFORM_SERVICE_KEY} CF_USER, CF_PASSWORD..."
-  export CF_USER=$(echo $SERVICE_KEY | jq -r .username)
-  export CF_PASSWORD=$(echo $SERVICE_KEY | jq -r .password)
+  echo "Querying for ${app_name}-${APP_DB_SERVICE}-${environment_name} ..."
+  DBKEY=$(cf service-key ${app_name}-${APP_DB_SERVICE}-${environment_name} ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name} | tail -n +2)
+  echo "Exporting ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name} for DB credentials"
+  export DATABASE_URL=$(echo $DBKEY | jq -r .uri)
 }
 
 export_environment() {
-  export_terraform_storage_key
+  export_app_storage_key
   export_service_key
 }
 
@@ -103,16 +110,16 @@ setup() {
     cf create-space ${space_name} -o ${organization_name}
   fi
 
-  if service_exists "${TERRAFORM_SERVICE}" ; then
-    echo ${TERRAFORM_SERVICE} already created
+  if service_exists "${app_name}-${APP_DB_SERVICE}-${environment_name}" ; then
+    echo ${app_name}-${APP_DB_SERVICE}-${environment_name} already created
   else
-    cf create-service cloud-gov-service-account space-deployer ${TERRAFORM_SERVICE}
+    cf create-service aws-rds ${RDSTYPE} ${app_name}-${APP_DB_SERVICE}-${environment_name}
   fi
 
-  if service_exists "${TERRAFORM_STORAGE_SERVICE}" ; then
-    echo space "${TERRAFORM_STORAGE_SERVICE}" already created
+if service_exists "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}" ; then
+    echo space "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}" already created
   else
-    cf create-service s3 ${S3BUCKETTYPE} ${TERRAFORM_STORAGE_SERVICE}
+    cf create-service s3 "${S3BUCKETTYPE}" "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}"
   fi
 
   setup_keys
@@ -120,89 +127,88 @@ setup() {
   export_environment
   aws s3api put-bucket-versioning --bucket ${BUCKET_NAME} --versioning-configuration Status=Enabled
 
-  if service_exists "${APP_SERVICE}" ; then
-    echo space "${APP_SERVICE}" already created
-  else
-    cf create-user-provided-service "${APP_SERVICE}" -p "{\"adminJwtSecret\": \"${ADMIN_JWT_SECRET}\", \"jwtSecret\": \"${JWT_SECRET}\", \"sessionSecret1\": \"${SESSION_SECRET_1}\", \"sessionSecret2\": \"${SESSION_SECRET_2}\"}"
-  fi
 }
 
 setup_keys() {
-  if service_key_exists "${TERRAFORM_SERVICE}" "${TERRAFORM_SERVICE_KEY}" ; then
-    echo ${TERRAFORM_SERVICE_KEY} already created
+  if service_key_exists "${app_name}-${APP_DB_SERVICE}-${environment_name}" "${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}" ; then
+    echo ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name} already created
   else
-    echo "Creating ${TERRAFORM_SERVICE_KEY}..."
-    cf create-service-key ${TERRAFORM_SERVICE} ${TERRAFORM_SERVICE_KEY}
+    echo "Creating ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}..."
+    cf create-service-key "${app_name}-${APP_DB_SERVICE}-${environment_name}" "${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}"
   fi
 
-  if service_key_exists "${TERRAFORM_STORAGE_SERVICE}" "${TERRAFORM_STORAGE_SERVICE_KEY}" ; then
-    echo ${TERRAFORM_STORAGE_SERVICE_KEY} already created
+  if service_key_exists "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}" "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}" ; then
+    echo "${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name}" already created
   else
-    echo "Creating ${TERRAFORM_STORAGE_SERVICE_KEY}..."
-    cf create-service-key ${TERRAFORM_STORAGE_SERVICE} ${TERRAFORM_STORAGE_SERVICE_KEY}
+    echo "Creating "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}"..."
+    cf create-service-key "${app_name}-${APP_STORAGE_SERVICE}-${environment_name}" "${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name}"
   fi
 
   echo "To see service keys, execute './deployment/manage.sh'"
 }
 
 update_keys() {
-  if service_key_exists "${TERRAFORM_SERVICE}" "${TERRAFORM_SERVICE_KEY}" ; then
-      echo ${TERRAFORM_SERVICE_KEY} exists, deleting and recreating
-      cf delete-service-key ${TERRAFORM_SERVICE} ${TERRAFORM_SERVICE_KEY}
-      cf create-service-key ${TERRAFORM_SERVICE} ${TERRAFORM_SERVICE_KEY}
+  if service_key_exists "${app_name}-${APP_DB_SERVICE}-${environment_name}" "${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}" ; then
+      echo ${APP_DB_SERVICE_KEY}-${environment_name} exists, deleting and recreating
+      cf delete-service-key ${app_name}-${APP_DB_SERVICE}-${environment_name} ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}
+      cf create-service-key ${app_name}-${APP_DB_SERVICE}-${environment_name} ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}
   else
-      echo ${TERRAFORM_SERVICE_KEY} does not exist
+      echo {app_name}-${APP_DB_SERVICE}-${environment_name} does not exist
   fi
 
-  if service_key_exists "${TERRAFORM_STORAGE_SERVICE}" "${TERRAFORM_STORAGE_SERVICE_KEY}" ; then
-      echo ${TERRAFORM_STORAGE_SERVICE_KEY} exists, deleting and recreating
-      cf delete-service-key ${TERRAFORM_STORAGE_SERVICE} ${TERRAFORM_STORAGE_SERVICE_KEY}
-      cf create-service-key ${TERRAFORM_STORAGE_SERVICE} ${TERRAFORM_STORAGE_SERVICE_KEY}
+  if service_key_exists "${APP_STORAGE_SERVICE}" "${APP_STORAGE_SERVICE_KEY}" ; then
+      echo ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name} exists, deleting and recreating
+      cf delete-service-key ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name}
+      cf create-service-key ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name}
   else
-      echo ${TERRAFORM_STORAGE_SERVICE_KEY} does not exist
+      echo ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name} does not exist
   fi
 }
 
-print_service_key() {
-  cf service-key terraform-user ${TERRAFORM_SERVICE_KEY}
+print_db_details() {
+  cf service-key ${app_name}-${APP_DB_SERVICE}-${environment_name} ${app_name}-${APP_DB_SERVICE_KEY}-${environment_name}
 }
 
 print_bucket_details() {
-  export_terraform_storage_key
+  export_app_storage_key
   aws s3api get-bucket-encryption --bucket $BUCKET_NAME
   aws s3api get-bucket-versioning --bucket $BUCKET_NAME
 }
 
 print_terraform_storage_key() {
-  cf service-key ${TERRAFORM_STORAGE_SERVICE} ${TERRAFORM_STORAGE_SERVICE_KEY}
+  cf service-key ${app_name}-${APP_STORAGE_SERVICE}-${environment_name} ${app_name}-${APP_STORAGE_SERVICE_KEY}-${environment_name}
 }
 
 show() {
-  print_service_key
+  print_db_details
   print_terraform_storage_key
   print_bucket_details
 }
 
 deploy() {
   export_environment
-  #terraform apply deployment/workspaces/${space_name}
+
+  echo Deploying database bootstraping task
+  cf push ${app_name}-db-bootstrap-${environment_name} \
+            -f db_manifest.yml \
+            --health-check-type none \
+            --no-route \
+            --var app_name=${app_name} \
+            --var environment_name=${environment_name} \
+            --var default_memory=4G \
+            --var default_disk=1G
+
+  echo Restore from backup
+  cf run-task ${app_name}-db-bootstrap-${environment_name} \
+            "/usr/local/bin/s3backup" \
+            --name ${app_name}-db-${environment_name}-backup-$(date '+%Y%m%d%H%M%S')
 }
 
 rotate() {
-  update_keys
-
-  echo "Forcing redeploy of CMS"
-  #cf restage strapi-api-host
   cat << EOF
 
 
 You need to update CI/CD github secrets with ./manage.sh show
-
-  terraform-storage-key.access_key_id => AWS_ACCESS_KEY_ID_ENV
-  terraform-storage-key.secret_access_key => AWS_SECRET_ACCESS_KEY_ENV
-
-  terraform-user-key.password => CF_PASSWORD_ENV
-  terraform-user-key.username => CF_USER_ENV
 EOF
 }
 
@@ -216,8 +222,11 @@ while [ "$1" != "" ]; do
     -s | --space )              shift
                                 space_name=$1
                                 ;;
-    -e | --environment )              shift
-                                environment=$1
+    -e | --environment )        shift
+                                environment_name=$1
+                                ;;
+    -a | --application )        shift
+                                app_name=$1
                                 ;;
     -h | --help )               usage
                                 exit

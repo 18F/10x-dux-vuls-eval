@@ -24,8 +24,8 @@
 
     - name: ((app_name))-oval-((env))
       instances: ((default_instances))
-      memory: ((default_memory))
-      disk: ((default_disk))
+      memory: 4G
+      disk: 16G
       command: goval-dictionary server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
