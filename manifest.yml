@@ -1,6 +1,6 @@
 ---
     applications:
-    - name: ((app_name))-edb-((env))
+    - name: ((app_name))-edb-((environment_name))
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
@@ -8,10 +8,10 @@
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))
 
 
-    - name: ((app_name))-cve-((env))
+    - name: ((app_name))-cve-((environment_name))
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
@@ -19,22 +19,22 @@
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))
 
 
-    - name: ((app_name))-oval-((env))
+    - name: ((app_name))-oval-((environment_name))
       instances: ((default_instances))
-      memory: 4G
-      disk: 16G
+      memory: ((default_memory))
+      disk: ((default_disk))
       command: goval-dictionary server --bind=0.0.0.0 --port=8080 --dbtype postgres --dbpath "$DATABASE_URL" --debug-sql
       docker:
         image: ohsh6o/vuls-combined:latest
       instances: ((default_instances))
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))
 
 
-    - name: ((app_name))-gost-((env))
+    - name: ((app_name))-gost-((environment_name))
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
@@ -42,10 +42,10 @@
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))
 
 
-    - name: ((app_name))-msf-((env))
+    - name: ((app_name))-msf-((environment_name))
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
@@ -53,15 +53,15 @@
       docker:
         image: ohsh6o/vuls-combined:latest
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))
 
 
-    - name: ((app_name))-core-((env))
+    - name: ((app_name))-core-((environment_name))
       instances: ((default_instances))
       memory: ((default_memory))
       disk: ((default_disk))
-      command: curl -L -o ((config_local_path)) ((config_url)) && vuls server -debug -config ((config_local_path)) -to-localfile -format-json -log-dir=/var/log -results-dir=/var/tmp -listen=0.0.0.0:8080
+      command: echo ((config_data)) | base64 -d | tee ((config_local_path)) && vuls server -debug -config ((config_local_path)) -to-localfile -format-json -log-dir=/var/log -results-dir=/var/tmp -listen=0.0.0.0:8080
       docker: 
         image: ohsh6o/vuls-combined:latest
       services:
-      - ((rds_instance))
+      - ((app_name))-db-((environment_name))

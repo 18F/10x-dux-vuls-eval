@@ -200,8 +200,26 @@ deploy() {
 
   echo Restore from backup
   cf run-task ${app_name}-db-bootstrap-${environment_name} \
-            "/usr/local/bin/s3backup" \
+            "/usr/local/bin/s3restore" \
             --name ${app_name}-db-${environment_name}-backup-$(date '+%Y%m%d%H%M%S')
+
+  echo Waiting for 5 minutes
+  #sleep 120
+
+  config_data=$(jinja2 docker/vuls/config.toml -D app_name=${app_name} -D environment_name=${environment_name} | base64)
+
+  echo Deploy application stack
+  cf push -f manifest.yml \
+        --var app_name=${app_name} \
+        --var environment_name=${environment_name}  \
+        --var default_memory=256M \
+        --var default_disk=1G \
+        --var default_instances=1 \
+        --var config_data="${config_data}" \
+        --var config_local_path=/tmp/config.toml
+
+  echo Deployment complete, removing databootstrap container.
+  cf delete -f ${app_name}-db-bootstrap-${environment_name}
 }
 
 rotate() {
