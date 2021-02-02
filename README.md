@@ -14,6 +14,10 @@ More information about the overall 10x process can bee found on [the 10x website
 
 Project documentation is in the [./docs](./docs) directory.
 
+Deployment instructions for developers or DevOps engineers are in [./docs/DEPLOY.md](./docs/DEPLOY.MD).
+
+Architecture and design rationale are in [./docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
+
 ## Project Directory Structure
 
 - Custom container build components are in the [./docker](./docker) directory.
